@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
+
+.letbox{
+  border: 1.5px outset #7b98ed;
+  border-radius: 20px;
+  height: 50px;
+  width: 180px;
+  position: absolute;
+  margin: 20px;
+  box-shadow: inset -1px -1px 10px #7b98ed;
+}
+
+.qtxt{
+  font-family: McLaren, cursive;
+  font-size: 15px;
+  color: #8fbfff;
+  text-align: center;
+  margin: 13px;
+}
+
+.letbox:hover{
+  background: #3d4f8f;
+
+}
+
+.letbox:hover .qtxt{
+  color: white;
+}
+.contact{
+  height: 180px;
+  width: 960px;
+  margin: 18px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: 7px 7px 20px #000;
+}
+
+.boxes{
+  height: 420px;
+  width: 960px;
+  margin: 18px;
+  border-radius: 8px;
+  background: black;
+  box-shadow: 7px 7px 20px #020305;
+  position: absolute;
+}
+
+.sect{
+  text-align: center;
+  padding: 40px;
+  height: 270px;
+  width: 530px;
+  margin: 30px;
+  background: #120c61;
+  border-radius: 9px;
+  opacity: 0.5;
+  box-shadow: 4px 4px 25px #7d8eff;
+  position:absolute;
+  color: white;
+}
+
+
+.txt{
+  opacity: 1;
+  height: 270px;
+  width: 530px;
+  color:white;
+  font-family: McLaren, cursive;
+  font-size: 15px;
+  position: absolute;
+  text-align: center;
+  margin: 70px;
+  font-size: 20px;
+
+}
+
+.sect:hover {
+  box-shadow: 8px 8px 25px #7094ff;
+}
+
+
+.hh{
+  color: white;
+  font-family: McLaren,cursive;
+  font-size: 60px;
+  margin-top: 150px;
+  margin-left: 420px;
+  position: absolute;
+}
+
+#im1:hover .hh{
+color: red;  }
+
+#im1:hover {
+  animation: spin 2.5s infinite linear;
+  }
+
+
+  #im2:hover {
+    animation: spin 2.5s infinite linear;
+    }
+    #im3:hover {
+      animation: spin 2.5s infinite linear;
+      }
+
+  @keyframes spin {
+  		from {
+  				transform: rotate(0deg);
+  		}
+  		to {
+  				transform: rotate(359deg);
+  		}
+  }
