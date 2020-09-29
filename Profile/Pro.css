@@ -1,0 +1,160 @@
+.modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 100px;
+  top:0;
+  width: 1100px; /* Full width */
+  height: 880px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: transparent; /* Fallback color */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  color: white;
+  margin-left: 0px;
+  top:0;
+  background: linear-gradient(to bottom, #000000d9,#2b44ab,#55a1f2  );
+  width: 1100px;
+  height: 880px;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.proi
+{ position: absolute;
+  background-image: url('bg.gif');
+  height:148px;
+  width:148px;
+  margin-left: 860px;
+  margin-top: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 0px 20px 4px #75aeff;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding-top: 3px;
+  padding-left: 3px;
+  background: linear-gradient(to bottom, #0b211f, #2b44ab);
+  color: white;
+  height: 30px;
+
+}
+
+.modal-body {padding: 2px 16px; height: 880px;}
+.slidecontainer {
+  width: 150px;
+  margin-top: -20px;
+}
+
+.bt{
+  height: 70px;
+  width:120px;
+  margin-left: 900px;
+  margin-top: 70px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #2b44ab, #000);
+  float: bottom;
+    box-shadow: 0px 0px 20px 2px #99d7ff;
+}
+.slider {
+  -webkit-appearance: none;
+  margin-top: -20px;
+  width: 150px;
+  height: 3px;
+  background: #99d7ff;
+  border-radius: 4px;
+  outline: none;
+  opacity: 1;
+
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #1fafcc, #000);
+  border: 2px solid white;
+    box-shadow: 0px 0px 20px 2px #74c0f2;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #6cf0e3;
+  cursor: pointer;
+
+}
+
+.g{
+  background: #55a1f2  ;
+  padding:0 10px;
+  color:white;
+  border-radius: 50%;
+  margin-left: 80px;
+  margin-top: -30px;
+  width:139px;
+
+
+}
+
+.goal{
+  margin-top: 50px;
+  width: 350px;
+  height: 240px;
+  background: linear-gradient(to top, #000,#2b44ab,#55a1f2  );
+  border: 1px solid #99d7ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 2px #008feb;
+  float: left;
+  margin-right: 40px;
+}
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
