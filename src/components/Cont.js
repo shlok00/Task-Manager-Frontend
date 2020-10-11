@@ -12,13 +12,14 @@ import Gg from '../images/gg.png';
 import Gs from '../images/gs.png';
 import Gw from '../images/gw.png';
 import ScrollTo from "react-scroll-into-view";
+import Button from 'react-bootstrap/Button'
 import '../styles/Typer.css';
 
 class Cont extends React.Component{
 
 
   render() {
-    window.addEventListener('load',(event)=>{
+      window.addEventListener('load',(event)=>{
 
       const timer = document.querySelector('.type');
         setTimeout(function(){
@@ -32,6 +33,10 @@ class Cont extends React.Component{
 
 
     })
+
+    function btn(){
+    window.open("https://www.google.com", "_blank");    }
+
       return (
         <div className="cont">
 
@@ -97,7 +102,7 @@ class Cont extends React.Component{
           make a type specimen book.</div><img src = {Sleep}/>
           <div className="sect"></div><div className="btn">LET'S GO!</div></div></div>
           <div className="bx5" id="tm"><div className="boxes">
-          <div className="sect"></div><div className="btn">LET'S GO!</div><div className="txt">TASK MANAGER<br/>Lorem Ipsum is simply dummy
+          <div className="sect"></div><Button variant="light" size="sm" href="file:///C:/Users/HP/Desktop/college/New_App_Page/src/todos/app.html" target="_blank" >LET'S GO!</Button> <div className="txt">TASK MANAGER<br/>Lorem Ipsum is simply dummy
            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
            dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to

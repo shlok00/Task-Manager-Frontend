@@ -1,0 +1,129 @@
+
+@import url( "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Staatliches&display=swap");
+.container {
+  position: relative;
+  left: 230px;
+  top: 200px;
+  width: 480px;
+  height: 230px;
+
+
+}
+
+
+body {
+  background-color: transparent;
+  text-align: center;
+  color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+:root {
+    --color-chevron: #dd5fbe;
+    --color-mug: white;
+    --color-coffee: linear-gradient(to bottom, #fff,#227abd,#161b66, #061729);
+    --color-round: #1a1a1a;
+}
+
+
+.glow {
+    position: relative;
+    height:100px;
+    top:50px;
+  font-size: 80px;
+  -webkit-text-stroke: 4px #737cbd;
+  color: #fff;
+    font-family: 'Permanent Marker';
+  text-align: center;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+        font-weight: 550;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #bdddff, 0 0 20px #2850ad, 0 0 30px #bbdafa, 0 0 40px #bbdafa, 0 0 50px #8ec1f5, 0 0 60px #8ec1f5, 0 0 70px #0052c7;
+  }
+  to {
+    text-shadow: 0 0 20px #bdddff, 0 0 30px #094a6b, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #094a6b, 0 0 70px #01101f, 0 0 80px #01101f;
+  }
+}
+.scale{
+    transform: scale(2);
+}
+.mugContainer{
+        display: flex;
+        height: 100px;
+        width: 640px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    position: relative;
+}
+
+h1{
+  font-family: "Permanent Marker";
+  width:200px;
+  margin-left: -40px;
+}
+
+.mug {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  border-radius: 0 0 15px 15px;
+  border-left: 5px solid var(--color-mug);
+  border-bottom: 5px solid var(--color-mug);
+  border-right: 5px solid var(--color-mug);
+  background: var(--color-round);
+
+
+}
+
+.coffee{
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  margin: 2px;
+  background: var(--color-coffee);
+  border-radius: 0 0 6px 6px;
+  animation: coffee 3s ease-in-out infinite alternate-reverse;
+}
+
+.handle{
+
+top: 7px;
+    left:39px;
+width: 12px;
+height: 16px;
+    border: 5px solid var(--color-mug);
+ position: absolute;
+ border-bottom-right-radius: 12px;
+ border-top-right-radius: 12px;
+  border-left-color: transparent;
+
+
+
+}
+
+.mug: after{
+  content: '';
+  position: absolute;
+  right: calc(-100% + 20px);
+  z-index: -1;
+}
+
+@keyframes coffee {
+  from {
+    top: calc(100% - 45px);
+  }
+
+  to {
+    top: calc(100% - 7px);
+  }
+
+}

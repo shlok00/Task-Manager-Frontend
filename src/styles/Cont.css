@@ -7,22 +7,24 @@ img{
 }
 
 .btn{
-  height: 30px;
-  width: 130px;
+  height: 40px;
+  width: 160px;
   background: white;
+  opacity: 0.9;
   border-radius: 10px;
   font-family: McLaren, cursive;
   text-align: center;
-  margin-top: 300px;
+  margin-top: 340px;
   padding-top: 5px;
-  margin-left: 450px;
+  margin-left: 750px;
   position: absolute;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .btn:hover{
   cursor: pointer;
+  opacity: 1;
 }
 
 .box{

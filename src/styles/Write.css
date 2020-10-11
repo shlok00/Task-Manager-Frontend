@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 
 .letbox{
-  border: 1.5px outset #7b98ed;
+  border: 1px outset #7b98ed;
   border-radius: 20px;
   height: 50px;
   width: 180px;
@@ -20,6 +20,7 @@
 
 .letbox:hover{
   background: #3d4f8f;
+  cursor: pointer;
 
 }
 
@@ -51,9 +52,9 @@
   height: 270px;
   width: 530px;
   margin: 30px;
-  background: #120c61;
+  background: #0a0636;
   border-radius: 9px;
-  opacity: 0.5;
+  opacity: 0.8;
   box-shadow: 4px 4px 25px #7d8eff;
   position:absolute;
   color: white;
