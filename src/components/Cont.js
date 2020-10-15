@@ -14,10 +14,10 @@ import Gw from '../images/gw.png';
 import ScrollTo from "react-scroll-into-view";
 import Button from 'react-bootstrap/Button'
 import '../styles/Typer.css';
+import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
+import Task1 from './Task.js';
 
 class Cont extends React.Component{
-
-
   render() {
       window.addEventListener('load',(event)=>{
 
@@ -34,16 +34,14 @@ class Cont extends React.Component{
 
     })
 
-    function btn(){
-    window.open("https://www.google.com", "_blank");    }
-
       return (
+        <div className="bdhome">
         <div className="cont">
-
           <div className="navbox"><Clock/>
           <br/><br/><br/><br/><br/>
-          <div className="letbox"><div className="qtxt">PROFILE</div></div> <br/><br/><br/>
-            <div className="letbox"><div className="qtxt">NOTIFICATIONS</div></div><br/><br/><br/>
+          <br/><br/><br/><br/>
+          <div className="letbox"><div className="qtxt">PROFILE</div></div> <br/><br/><br/><br/>
+            <div className="letbox"><div className="qtxt">NOTIFICATIONS</div></div><br/><br/><br/><br/>
               <div className="letbox"><div className="qtxt">FEEDBACK</div></div>
 
           </div>
@@ -71,16 +69,13 @@ class Cont extends React.Component{
              left: "90px"
           }} id="im3"/>
 
-          <div class="typewriter">
- <h1 class="type">APP NAME<br/></h1></div>
- <div class="typewriter">
- <h1 class="type1" > SIMPLE.  EFFECTIVE.  GAME-CHANGING.</h1>
-</div>
+ <div className="type">APP NAME<br/></div>
+ <div className="type1" >SIMPLE.  EFFECTIVE.  MODERN.</div>
 
-          <img src = {Home} style={{width: "700px", marginLeft: "260px"}}/>
+          <img src = {Home} style={{width: "700px", marginLeft: "260px" }}/>
           </div></div>
           <div className="bx2" id="work"><div className="boxes">
-          <div className="sect"></div><div className="btn">LET'S GO!</div><div className="txt">WORK<br/>Lorem Ipsum is simply dummy
+          <div className="sect"></div><Button variant="light" target="_blank" >LET'S GO!</Button><div className="txt">WORK<br/>Lorem Ipsum is simply dummy
            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
            dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to
@@ -88,21 +83,22 @@ class Cont extends React.Component{
           <img src = {Work}/>
          </div></div>
           <div className="bx3" id="health"><div className="boxes">
-          <div className="sect"></div><div className="btn">LET'S GO!</div><div className="txt">HEALTH<br/>Lorem Ipsum is simply dummy
+          <div className="sect"></div><Button variant="light" target="_blank" >LET'S GO!</Button><div className="txt">HEALTH<br/>Lorem Ipsum is simply dummy
            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
            dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to
           make a type specimen book.</div><img src = {Heal}/>
-          <div className="sect"></div><div className="btn">LET'S GO!</div></div></div>
+          </div></div>
           <div className="bx4" id="sleep"><div className="boxes">
-          <div className="sect"></div><div className="btn">LET'S GO!</div><div className="txt">SLEEP<br/>Lorem Ipsum is simply dummy
+          <div className="sect"></div><Button variant="light" target="_blank" >LET'S GO!</Button><div className="txt">SLEEP<br/>Lorem Ipsum is simply dummy
            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
            dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to
           make a type specimen book.</div><img src = {Sleep}/>
-          <div className="sect"></div><div className="btn">LET'S GO!</div></div></div>
+          </div></div>
           <div className="bx5" id="tm"><div className="boxes">
-          <div className="sect"></div><Button variant="light" size="sm" href="file:///C:/Users/HP/Desktop/college/New_App_Page/src/todos/app.html" target="_blank" >LET'S GO!</Button> <div className="txt">TASK MANAGER<br/>Lorem Ipsum is simply dummy
+          <div className="sect"></div><Button variant="light" >LET'S GO!</Button>
+ <div className="txt">TASK MANAGER<br/>Lorem Ipsum is simply dummy
            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
            dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to
@@ -126,10 +122,12 @@ class Cont extends React.Component{
             <ScrollTo selector="#con">
           <div className="hd1">CONTACT US</div> </ScrollTo>
           </div>
-          <div className="box"></div>
 
+          <div className="boxbck"></div>
 
+      </div>
         </div>
+
       );
     }
 

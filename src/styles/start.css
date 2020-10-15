@@ -6,16 +6,18 @@
   top: 200px;
   width: 480px;
   height: 230px;
-
-
 }
 
 
-body {
-  background-color: transparent;
+.body {
   text-align: center;
   color: transparent;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url('../images/start.jpg');
+  background-repeat: no-repeat;  background-attachment: fixed;
+  height:610px;
+  width:1280px;
+  background-size: 1280px 610px;
 
 }
 
@@ -33,24 +35,23 @@ body {
     height:100px;
     top:50px;
   font-size: 80px;
-  -webkit-text-stroke: 4px #737cbd;
+  -webkit-text-stroke: 4px transparent;
   color: #fff;
     font-family: 'Permanent Marker';
   text-align: center;
-  -webkit-animation: glow 2s ease-in-out infinite alternate;
-  -moz-animation: glow 2s ease-in-out infinite alternate;
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
         font-weight: 550;
 }
 
-@-webkit-keyframes glow {
+@keyframes glow {
   from {
-    text-shadow: 0 0 10px #bdddff, 0 0 20px #2850ad, 0 0 30px #bbdafa, 0 0 40px #bbdafa, 0 0 50px #8ec1f5, 0 0 60px #8ec1f5, 0 0 70px #0052c7;
+    text-shadow: 0 0 10px #bdddff, 0 0 20px #2850ad, 0 0 30px #5d6ac2, 0 0 40px #5d6ac2, 0 0 50px #8ec1f5, 0 0 60px #8ec1f5, 0 0 70px #0052c7;
   }
   to {
-    text-shadow: 0 0 20px #bdddff, 0 0 30px #094a6b, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #094a6b, 0 0 70px #01101f, 0 0 80px #01101f;
+    text-shadow: 0 0 20px #bdddff, 0 0 30px #410896, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #410896, 0 0 70px #01101f, 0 0 80px #01101f;
   }
 }
+
 .scale{
     transform: scale(2);
 }
@@ -68,6 +69,9 @@ h1{
   font-family: "Permanent Marker";
   width:200px;
   margin-left: -40px;
+  position: absolute;
+    color: white;   align-content: center;
+    left: 345px;  top: 100px;
 }
 
 .mug {

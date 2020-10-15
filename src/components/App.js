@@ -1,13 +1,15 @@
-import React from 'react';
-import Cont from './Cont.js'
+import React, { Component } from 'react';
+import Start from './Start.js';
+import Cont from './Cont.js';
 import '../styles/App.css';
 
-function App() {
+class App extends Component {
+  render(){
   return (
     <div>
-<Cont/>
+<Start/>
     </div>
-  );
+  );}
 }
 
 export default App;

@@ -3,8 +3,16 @@
     padding: 0px;;
 }
 
-body{
+.bd{
     font-family: Arial, Helvetica, sans-serif;
+    position:absolute;
+    background-image: url('../images/log.jpg');
+     background-repeat: no-repeat; background-attachment: fixed;
+    height:630px;
+    width:1280px;
+    background-size: 1280px 630px;
+    margin-top: -420px;
+    margin-left: -230px;
 }
 
 .contain
@@ -13,11 +21,11 @@ body{
     grid-template-columns: 1fr 2fr;
     background-color: red;
     background: linear-gradient(to bottom, #000,#282a9c,#55a1f2);
-    width: 600px;
+    width: 200px;
     height: 400px;
-    margin-top: 70px;
-    margin-left: 365px;
-    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 105px;
+    border-radius:15px;
 }
 
 
@@ -57,17 +65,24 @@ body{
 
 
 .box-2{
-    background-color: white;
+    background-color: #0000003b;
     margin: 5px;
-    border-radius: 30px;
+    border-radius: 0px;
+    width: 800px;
+    height: 400px;
+    margin-top:0px;
+
 }
 
 .login-form-container
 {
     text-align: center;
     margin-top: 5%;
-
-
+    float:left;
+    width: 400px;
+    height: 340px;
+    display: block;
+    background: transparent;
 }
 
 .login-form-container h1
@@ -75,6 +90,7 @@ body{
     color: black;
     font-size: 24px;
     padding: 20px;
+    font-family: inherit;
 }
 
 .input-field
@@ -97,36 +113,55 @@ body{
     border: none;
     width: 250px;
     outline: none;
-    background-color: #60b2f0;
+    font-weight: bold;
+
+    background: linear-gradient(to bottom,#60b2f0, 80%,#0b1a80);
 }
 
+.continue{
+  font-weight: bold;
+ background: linear-gradient(to bottom,#3854b0, 80%,#000);
+ color: white;
+ border: none;
+}
 
+.continue:hover{
+  cursor: pointer;
+  box-shadow: 2px 2px 10px black;
+}
+
+.login-button:hover{
+  cursor:pointer;
+  box-shadow: 2px 2px 15px #292929;
+}
 
 .button-2
 {
-    display: none;
+    display: block;
 }
-
-
-
 
 
 .signup-form-container
 {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-60%);
+    position: absolute;
+
     text-align: center;
-    display: none;
+    display: block;
+    background: transparent;
+    width: 450px;
+    height: 340px;
+    margin-left: 360px;
+    margin-top: -20px;
 }
 
 
 .signup-form-container h1
 {
-    color: black;
+    color: white;
     font-size: 24px;
     padding: 20px;
+    font-family: inherit;
+
 }
 
 .signup-button{
@@ -138,5 +173,11 @@ body{
     border: none;
     width: 250px;
     outline: none;
-    background-color: #60b2f0;
+    font-weight: bold;
+    background: linear-gradient(to bottom,#60b2f0,80%,#0b1a80);
+}
+
+.signup-button:hover{
+  cursor:pointer;
+  box-shadow: 2px 2px 15px #000;
 }
