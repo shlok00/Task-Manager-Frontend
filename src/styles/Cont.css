@@ -7,12 +7,12 @@ img{
 }
 
 .bdhome{
-  height: 2650px;
+  height: 610px;
   width: 100%;
   position: absolute;
   display: block;
-  margin-top: -480px;
-  margin-left: -680px;
+  margin-top: -500px;
+  margin-left: -694px;
 }
 
 .btn{
@@ -44,20 +44,20 @@ img{
 }
 
 .boxbck{
-  margin-top:5px;
+  margin-top:-35px;
 background: linear-gradient(to right,#000,60%,#14104a);
-height: 2650px;
-width: 1267px;
+height: 1350px;
+width: 1327px;
 
 }
 
 .nav{
-background: linear-gradient(to top,#0a0b2b,#4a60a8);
+background: #000;
   height: 50px;
-  width: 100%;
+  width: 110%;
   position: fixed;
-  margin-top: -43px;
-  margin-left: 4px;
+  margin-top: -52px;
+  margin-left: 0px;
 }
 
 .navbox{
@@ -88,58 +88,12 @@ background: linear-gradient(to top,#0a0b2b,#4a60a8);
   box-shadow: 5px 5px 10px #151821;
 }
 
-.bx2{
-  background: #1d2354;
-  height: 460px;
-  width: 1000px;
-  margin-top: 502px;
-  margin-left: 20px;
-  border-radius: 6px;
-  position: absolute;
-}
-
-
-.bx2:hover{
-  background: linear-gradient(to bottom, #384573, #4d5e99);
-  box-shadow: 5px 5px 10px #151821;
-  cursor: ;
-}
-.bx3{
-  background: #1d2354;
-  height: 460px;
-  width: 1000px;
-  margin-top: 982px;
-  margin-left: 20px;
-  border-radius: 6px;
-  position: absolute;
-}
-
-.bx3:hover{
-  background: linear-gradient(to bottom, #384573, #4d5e99);
-  box-shadow: 5px 5px 10px #151821;
-}
-
-.bx4{
-  background: #1d2354;
-  height: 460px;
-  width: 1000px;
-  margin-top: 1462px;
-  margin-left: 20px;
-  border-radius: 6px;
-  position: absolute;
-}
-
-.bx4:hover{
-  background: linear-gradient(to bottom, #384573, #4d5e99);
-  box-shadow: 5px 5px 10px #151821;
-
-}
 
 .bx5{
   background: #1d2354;
   height: 460px;
   width: 1000px;
-  margin-top: 1942px;
+  margin-top: 572px;
   margin-left: 20px;
   border-radius: 6px;
   position: absolute;
@@ -151,11 +105,19 @@ box-shadow: 5px 5px 10px #151821;
 
 }
 
+.linx{
+  background: transparent;
+  border-left: 3px dotted #7483e3;
+  position: absolute;
+  height: 25px;
+  width: 100px;
+  margin-top: 0px; margin-left: 110px;
+}
 
 .hd{
   font-family: McLaren, cursive;
   color: #fff;
-  font-size: 23px;
+  font-size: 29px;
   padding: 4px;
   float: left;
   margin-left: 10px;
@@ -169,9 +131,10 @@ box-shadow: 5px 5px 10px #151821;
   padding: 10px;
   margin-left: 10px;
   float: left;
-  width: 123px;
+  width: 127px;
   text-align: center;
   cursor: pointer;
+  background: black;
 
 }
 
@@ -184,7 +147,7 @@ box-shadow: 5px 5px 10px #151821;
   background: linear-gradient(to left,#040a33,#1c2ea6);
   height: 220px;
   width: 1000px;
-  margin-top: 2422px;
+  margin-top: 1122px;
   margin-left: 20px;
   position: absolute;
 }

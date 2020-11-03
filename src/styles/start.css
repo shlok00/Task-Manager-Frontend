@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 @import url( "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Staatliches&display=swap");
 .container {
   position: relative;
@@ -32,15 +32,18 @@
 
 .glow {
     position: relative;
-    height:100px;
-    top:50px;
-  font-size: 80px;
+
+  font-size: 17px;
   -webkit-text-stroke: 4px transparent;
   color: #fff;
-    font-family: 'Permanent Marker';
+    font-family: McLaren;
   text-align: center;
   animation: glow 1.5s ease-in-out infinite alternate;
         font-weight: 550;
+}
+
+h3{
+  font-family: Mclaren, cursive;
 }
 
 @keyframes glow {
@@ -48,17 +51,17 @@
     text-shadow: 0 0 10px #bdddff, 0 0 20px #2850ad, 0 0 30px #5d6ac2, 0 0 40px #5d6ac2, 0 0 50px #8ec1f5, 0 0 60px #8ec1f5, 0 0 70px #0052c7;
   }
   to {
-    text-shadow: 0 0 20px #bdddff, 0 0 30px #410896, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #410896, 0 0 70px #01101f, 0 0 80px #01101f;
+    text-shadow: 0 0 20px #bdddff, 0 0 30px #410896, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #410896, 0 0 70px #01101f, 0 0 80px #fff;
   }
 }
 
 .scale{
-    transform: scale(2);
+    transform: scale(1.5);
 }
 .mugContainer{
         display: flex;
         height: 100px;
-        width: 640px;
+        width: 110px;
         flex-direction: column;
         align-items: center;
         justify-content: center;

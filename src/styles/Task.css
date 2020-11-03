@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 
+.wraptask{
+  height: 1500px;
+  width: 1450px;
+  position: absolute;
+  background: transparent;
+  margin-left: -200px;
+  margin-top:-500px;
+}
 .bodytask {
   min-height: 20vh;
   display: flex;

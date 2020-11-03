@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.bodyts {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background: #122230;
+  height: 610px;
+}
+
+main {
+  max-width: 900px;
+  max-height:700px;
+}
+
+button:hover
+  {
+    box-shadow: 1px 1px 4px black;
+}
+
+.input-group {
+  margin: 1rem;
+}
+
+.list-group {
+  min-height: 1800px;
+  background: #0a0e14;
+  width: 450px;
+  vertical-align: top;
+  margin-left: 50px;
+}
+
+.liner{
+  background: transparent;
+  border-left: 3px dotted #48628a;
+  position: absolute;
+  height: 37px;
+  width: 100px;
+  margin-top: 23px; margin-left: 160px;
+}
+
+.list-group-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:  #122230;
+  border-radius: 10px;
+  min-height: 30px;
+  width: 380px;
+  float: left;
+  padding: 15px;
+  margin: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+h3 {
+  text-align: center;
+  color:white;
+  font-family: McLaren, cursive;
+}
+
+p {
+  margin:0;
+  color: black;
+  font-family: McLaren, cursive;
+}
+
+.cont{
+  height: 560px;
+  width: 1247px;
+  border-radius: 20px;
+  background: transparent;
+  justify-content: left;
+  align-items: left;
+  margin-top: 70px;
+  left:0px;
+  margin-left: 33px;
+  position:fixed;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+}
+
+.list-group-items:hover{
+  box-shadow:  0px 0px 20px #446e91;
+  cursor: pointer;
+}
+
+
+h4{
+  background:#446e91; color:white; border-radius:10px; padding:4px; text-align:center;
+  font-size: 13px;
+  font-family: Architects Daughter;
+}
+.completed h4{
+  background: #24a35b;
+  text-decoration: line-through;
+  text-decoration-color: #d40023c4;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+
+.completed.list-group-items:hover{
+  box-shadow:  0px 0px 20px #31c470;
+  cursor: pointer;
+}
+
+.completed#cls{
+  background: #31c470;
+}
+
+
+
+.in-progress h4 {
+background:#ccc318;
+color: black;
+}
+
+.drop {
+  background: linear-gradient(#eee, transparent);
+  border-radius: 4px;
+}
+
+h1{
+  color:white;
+}

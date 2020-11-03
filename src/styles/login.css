@@ -6,13 +6,13 @@
 .bd{
     font-family: Arial, Helvetica, sans-serif;
     position:absolute;
-    background-image: url('../images/log.jpg');
+    background: #0a0030;
      background-repeat: no-repeat; background-attachment: fixed;
     height:630px;
     width:1280px;
     background-size: 1280px 630px;
-    margin-top: -420px;
-    margin-left: -230px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 .contain
@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     background-color: red;
-    background: linear-gradient(to bottom, #000,#282a9c,#55a1f2);
+    background: linear-gradient(to bottom, #000000cc,70%,#282a9ccc,#000000cc);
     width: 200px;
     height: 400px;
     margin-top: 50px;
@@ -65,7 +65,7 @@
 
 
 .box-2{
-    background-color: #0000003b;
+    background: linear-gradient(to bottom, #0000005c,#546dd65c);
     margin: 5px;
     border-radius: 0px;
     width: 800px;
@@ -83,6 +83,7 @@
     height: 340px;
     display: block;
     background: transparent;
+    border-right: 1.5px dotted white;
 }
 
 .login-form-container h1
@@ -98,7 +99,7 @@
     box-sizing: border-box;
     font-size: 14px;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 20px;
     border: 1px solid rgb(168, 168, 168);
     width: 250px;
     outline: none;
@@ -107,32 +108,32 @@
 .login-button{
     box-sizing: border-box;
     color: white;
-    font-size: 14px;
+    font-size: 17px;
     padding: 13px;
-    border-radius: 7px;
+    border-radius: 22px;
     border: none;
     width: 250px;
     outline: none;
     font-weight: bold;
 
-    background: linear-gradient(to bottom,#60b2f0, 80%,#0b1a80);
+    background: linear-gradient(to bottom,#5e6ed6, 80%,#0b1a80);
 }
 
 .continue{
   font-weight: bold;
- background: linear-gradient(to bottom,#3854b0, 80%,#000);
+ background: linear-gradient(to bottom,#2ab580, 90%,#000);
  color: white;
  border: none;
 }
 
 .continue:hover{
   cursor: pointer;
-  box-shadow: 2px 2px 10px black;
+  box-shadow: 6px 6px 20px black;
 }
 
 .login-button:hover{
   cursor:pointer;
-  box-shadow: 2px 2px 15px #292929;
+  box-shadow: 5px 5px 15px #000;
 }
 
 .button-2
@@ -167,14 +168,14 @@
 .signup-button{
     box-sizing: border-box;
     color: white;
-    font-size: 14px;
+    font-size: 17px;
     padding: 13px;
-    border-radius: 7px;
+    border-radius: 22px;
     border: none;
     width: 250px;
     outline: none;
     font-weight: bold;
-    background: linear-gradient(to bottom,#60b2f0,80%,#0b1a80);
+    background: linear-gradient(to bottom,#5e6ed6,80%,#0b1a80);
 }
 
 .signup-button:hover{

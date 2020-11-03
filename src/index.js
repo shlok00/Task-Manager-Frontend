@@ -5,12 +5,9 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 import Log from './components/Log';
-import Start from './components/Start';
 import Cont from './components/Cont';
-import axios from 'axios';
 
 
-axios.defaults.baseURL("http://localhost:5000/");
 ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>

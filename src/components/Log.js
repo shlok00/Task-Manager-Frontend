@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/login.css';
+import '../styles/start.css';
 import Cont from './Cont.js';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import * as axios from "axios";
@@ -16,22 +17,50 @@ class Log extends Component
         password: null,
         age: null,
         username: null,
-        logemail: null,
-        logpassword: null
-
+        hash: null
     }
   }
+
+
+
+
+  handleHash = (event) => {
+    event.preventDefault();
+    axios({
+  method: 'post',
+  url: `https://habitable-productivityapp.herokuapp.com/user/confirm/${this.hash}`,
+  data: {}}).then(response=>{
+       console.log(response.status);
+       alert("Email verification successful!");
+  }).catch(error=>{console.log(error.response.status); alert("Unsuccessful! Try again!")});
+
+  }
+
+
 
   handleLoginSubmit = (event) =>
    { event.preventDefault();
      const data1 = {
-       logemail: this.logemail,
-       logpassword: this.logpassword
+       email: this.email,
+       password: this.password
      };
 
-     axios.post("user/login",data1).then(res=>{console.log(res)}).catch(err=> {console.log(err);})
+   axios.post('http://habitable-productivityapp.herokuapp.com/user/login',data1).then(response=>{
+      if(response.status == 200)
+      { console.log(response.status);
+        alert("Login Successful!");
 
-   }
+      }
+     }
+   ).catch(error=>{if(error.status != 200){
+     console.log(error.status);
+      alert("Login Error Detected!");
+   }});
+
+
+}
+
+
 
   handleSignupSubmit = (event) => {
     event.preventDefault();
@@ -42,7 +71,18 @@ class Log extends Component
       password: this.password
     };
 
-    axios.post("signup",data).then(res=>{console.log(res)}).catch(err=> {console.log(err);})
+    axios.post(`http://habitable-productivityapp.herokuapp.com/signup`,data).then(response=>{
+        alert('SIGNUP successful!');
+        console.log(response.token);
+
+
+   }
+   ).catch(err=> {console.log(err.status);
+       if(err.status === 409)
+        {alert('USER already exists!!');}
+        else if(err.status === 400)
+          {alert('Please fill in all fields');}});
+
   }
 
 
@@ -51,29 +91,38 @@ class Log extends Component
     const {password} = this.state;
     const {age} = this.state;
     const {username} = this.state;
-    const {logemail} = this.state;
-    const {logpassword} = this.state;
+
   return(
     <Router>
     <div className="bd">
   <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+
   <div className="contain">
     <div className="box-1">
       <div className="content-holder">
-        <h2>Hello!</h2>
+        <div className="glow"><h3>HabitAble</h3><br/></div>
+      <h2>Hello!</h2>
         <p style={{color: "white"}}>JOIN US!</p>
+        <div className="scale">
+          <div className="mugContainer">
+            <div className="mug">
+              <div className="coffee" />
+              <div className="handle" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div className="box-2">
       <div className="login-form-container">
-        <h1 style={{ fontSize: "150%", color: "#000", marginTop: "-55px", marginLeft:"60px", color:"white"}}>LOGIN FORM</h1>
+        <h1 style={{ fontSize: "150%", color: "#000", marginTop: "-55px", marginLeft:"80px", color:"white"}}>LOGIN FORM</h1>
         <br/><br />
         <br />
         <form>
-        <input type="email" placeholder="Email" className="input-field" style={{marginLeft: "50px"}} id="emaill"  onChange={event => this.logemail = event.target.value}/>
+        <input type="email" placeholder="Email" className="input-field" style={{marginLeft: "50px"}} id="emaill"  onChange={event => this.email = event.target.value}/>
         <br />
         <br />
-        <input type="password" placeholder="Password" className="input-field" style={{marginLeft: "50px"}} id="passwordl" onChange={event => this.logpassword = event.target.value} />
+        <input type="password" placeholder="Password" className="input-field" style={{marginLeft: "50px"}} id="passwordl" onChange={event => this.password = event.target.value} />
         <br />
         <br />
         <input className="login-button" type="submit" style={{marginLeft: "52px", marginTop: "117px"}} value="LOGIN!"
@@ -100,13 +149,21 @@ class Log extends Component
         <input type="password" placeholder="Password" className="input-field" id="password" onChange={event => this.password = event.target.value} />
         <br/><br/><br/>
         <input className="signup-button" type="submit" style={{marginTop:"-20px"}} value ="SIGN UP!"  />
-
         </form>
         <br/><br/><br/><br/>
-        <Link to="/home">
-        <input type="button" value="CONTINUE" style={{marginLeft: "-400px", height: "40px", width:"180px", borderRadius:"10px"}} className="continue"/>
+        <div style={{background: "#1b1978", height: "15px", width: "600px", color:"white", borderRadius: "5px", position:"absolute",
+         marginTop:"-30px", marginLeft: "-290px", padding:"15px", border:"3px outset #34327d"}}>
+         <form onSubmit={this.handleHash}>
+        <label>Enter the hash-code recieved in email: </label>
+        <input type="text" onChange={event => this.hash = event.target.value} />
+        <input type="submit" style={{width:"70px", background:"#000", color:"#fff", border:"none", height:"20px", hover: "cursor: pointer"}}/>
+        </form>
+      </div>
+        <Link to="/landing">
+        <input type="button" id="subs" value="CONTINUE" style={{marginLeft: "-400px",
+        height: "50px", width:"210px", borderRadius:"22px", fontSize:"20px", marginTop:"40px"}} className="continue"/>
         </Link>
-        <Route exact path ="/home" component={Cont}/>
+        <Route exact path ="/landing" component={Cont}/>
       </div>
     </div>
   </div>
