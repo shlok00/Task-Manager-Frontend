@@ -15,7 +15,6 @@ import ScrollTo from "react-scroll-into-view";
 import Button from 'react-bootstrap/Button'
 import '../styles/Typer.css';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
-import Tasks from './Tasks.js';
 
 class Cont extends React.Component{
   render() {
@@ -86,7 +85,6 @@ class Cont extends React.Component{
 
           <div className="bx5" id="tm"><div className="boxes">
           <div className="sect"></div> <Button variant="light">LET'S GO!</Button>
-          <Route exact path ="/tasks" component={Tasks}/>
  <div className="txt">TASK MANAGER<br/>The modern task manager tool is an interactive, creative mechanism.<br/><br/>
           - Post New Tasks!<br/>
           - Edit Existing Tasks!<br/>
