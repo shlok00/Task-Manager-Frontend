@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from './Clock.js'
+import Clock from './Clock.js';
 import '../styles/Cont.css';
 import '../styles/Write.css';
 import Task from '../images/task.gif';
@@ -12,7 +12,8 @@ import Gg from '../images/gg.png';
 import Gs from '../images/gs.png';
 import Gw from '../images/gw.png';
 import ScrollTo from "react-scroll-into-view";
-import Button from 'react-bootstrap/Button'
+import Prof from './Prof.js';
+import Button from 'react-bootstrap/Button';
 import '../styles/Typer.css';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 
@@ -37,21 +38,8 @@ class Cont extends React.Component{
                     <Router>
         <div className="bdhome">
         <div className="cont">
-          <div className="navbox">
-            <br/><br/><br/><br/><br/>
-          <Clock/>
-          <br/><br/><br/><br/>
-          <ScrollTo selector="#home">
-        <div className="letbox" style={{marginTop:"-55px"}}><div className="qtxt">HOME</div><div class="linx"></div> </div></ScrollTo><br/>
-        <ScrollTo selector="#tm">
-      <div className="letbox"><div className="qtxt">TASKS</div><div class="linx"></div> </div> </ScrollTo> <br/><br/><br/><br/>
-          <div className="letbox"><div className="qtxt">PROFILE</div><div class="linx"></div> </div><br/><br/><br/><br/>
-            <div className="letbox"><div className="qtxt">NOTIFICATIONS</div><div class="linx"></div></div><br/><br/><br/><br/>
-              <div className="letbox"><div className="qtxt">FEEDBACK</div><div class="linx"></div></div><br/><br/><br/><br/>
-              <ScrollTo selector="#con">
-            <div className="letbox"><div className="qtxt">CONTACT US</div></div> </ScrollTo>
 
-          </div>
+
           <div className="bx1" id="home"><div className="boxes">
 
           <img src={Gg} style={{
@@ -97,6 +85,23 @@ class Cont extends React.Component{
           <div className="hd">
           HabitAble</div>
 
+
+          </div>
+          <div className="navbox">
+            <br/><br/><br/><br/><br/>
+          <Clock/>
+          <br/><br/><br/><br/>
+          <ScrollTo selector="#home">
+        <div className="letbox" style={{marginTop:"-55px"}}><div className="qtxt">HOME</div><div class="linx"></div> </div></ScrollTo><br/>
+        <ScrollTo selector="#tm">
+      <div className="letbox"><div className="qtxt">TASKS</div><div class="linx"></div> </div> </ScrollTo> <br/><br/><br/><br/>
+        <Link to='/profile'>  <div className="letbox"><div className="qtxt">PROFILE</div><div class="linx"></div> </div></Link><br/><br/><br/><br/>
+          <Route exact path ="/profile" render={ () => <Prof/>}/>
+
+            <div className="letbox"><div className="qtxt">NOTIFICATIONS</div><div class="linx"></div></div><br/><br/><br/><br/>
+              <div className="letbox"><div className="qtxt">FEEDBACK</div><div class="linx"></div></div><br/><br/><br/><br/>
+              <ScrollTo selector="#con">
+            <div className="letbox"><div className="qtxt">CONTACT US</div></div> </ScrollTo>
 
           </div>
 

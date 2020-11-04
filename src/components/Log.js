@@ -163,7 +163,7 @@ class Log extends Component
         <input type="button" id="subs" value="CONTINUE" style={{marginLeft: "-400px",
         height: "50px", width:"210px", borderRadius:"22px", fontSize:"20px", marginTop:"40px"}} className="continue"/>
         </Link>
-        <Route exact path ="/landing" component={Cont}/>
+        <Route exact path ="/landing" render={ () => <Cont/>}/>
       </div>
     </div>
   </div>
