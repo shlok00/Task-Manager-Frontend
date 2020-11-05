@@ -6,16 +6,16 @@
   justify-content: center;
   align-items: center;
   color:white;
-  background: #122230;
-  height: 600px;
-  margin-top:-673px;
+ background: #122230;
+  height: 700px;
+  margin-top:-683px;
   margin-left: -1100px;
   width: 1350px;
   position: absolute;
 
 }
 
-main {
+*main {
   max-width: 900px;
   max-height:700px;
 }

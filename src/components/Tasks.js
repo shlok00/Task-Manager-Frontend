@@ -24,7 +24,7 @@ class App extends Component{
 
   componentDidMount(){
   const main = document.querySelector("main");
-
+  var a = 1;
   main.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       const { name } = e.target.dataset;
@@ -33,7 +33,7 @@ class App extends Component{
         if (todoInput.value.trim() !== "") {
           const value = todoInput.value;
           const template = `
-          <li class="list-group-items"   draggable="true" data-id="${Date.now()}" style="position:relative; padding-left: 60px;">
+          <li class="list-group-items"  id="item${a}" draggable="true" data-id="${Date.now()}" style="position:relative; padding-left: 60px;">
           <ul style="list-style-type: none; margin-left: -40px;">
           <li>
             <h4 contenteditable="true" id="title">Title</h4></li>
@@ -43,7 +43,11 @@ class App extends Component{
              border:1px solid black; border-radius:10px;"/></li>
              <div class="liner"></div>
             </ul>
-            <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%; position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+            <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
+             position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+               <input type="color" id="favcolor" name="favcolor" value="#ff0000" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
+               onChange="document.getElementById('item${a}').style.background = value;"
+               >
 
           </li>`;
 
@@ -51,6 +55,7 @@ class App extends Component{
           todosList.insertAdjacentHTML("beforeend", template);
           todoInput.value = "";
           const id = null;
+          a++;
         //**  axios.get('http://habitable-productivityapp.herokuapp.com/tasks').then(response=>{console.log(response.data); id = response.data;}) **/
 
           const data1 = {
@@ -173,10 +178,10 @@ crossorigin="anonymous"/>
   <div className="contr" style={{position: "fixed"}}>
   <main className="row" style={{  maxWidth: "1200px"}}>
 
-    <div className="input-group" style={{width:"750px", marginLeft: "140px"}}>
+    <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "0px"}}>
       <div className="input-group-prepend">
       <br/><br/><br/><br/>
-        <span className="input-group-text"  style={{background: "#0b8f44", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
+        <span className="input-group-text"  style={{background: "#618685", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
       </div>
       <input
         type="text"
@@ -186,24 +191,24 @@ crossorigin="anonymous"/>
         onChange = {event => this.desc = event.target.value}
       />
       <div className="input-group-append">
-        <button className="btn btn-success" data-name="add-btn" style={{background: "#0b8f44", height: "38px", marginTop: "-97px"}}>
+        <button className="btn btn-success" data-name="add-btn" style={{background: "#618685", height: "38px", marginTop: "-97px"}}>
           Append
         </button>
       </div>
     </div>
-    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #48628a"}}>
+    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #48628a", marginTop:"-40px"}}>
       <h3 style={{fontsize: "16px", width: "600px", fontFamily: "Architects Daughter", textAlign: "center"}}>Scheduled Tasks</h3>
       <ul className="list-group" data-name="todos-list"/>
 
     </div>
 
-    <div className="col-lg-6"style={{width: "1100px"}}>
+    <div className="col-lg-6"style={{width: "1100px",marginTop:"-40px"}}>
       <h3 style={{fontsize: "16px", fontFamily: "Architects Daughter"}}>Completed Tasks</h3>
       <ul className="list-group" style={{borderRadius:"0px" }}  data-name="completed-list" />
     </div>
 
   </main>
-  <h1 style={{color:"#1ebd63", padding:"10px", top:"0px", fontFamily: "Arial",
+  <h1 style={{color:"#fefbd8", padding:"10px", top:"0px", fontFamily: "Arial",
    position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE TASK MANAGER</h1>
  </div>
 </div>
