@@ -13,9 +13,12 @@ import Gs from '../images/gs.png';
 import Gw from '../images/gw.png';
 import ScrollTo from "react-scroll-into-view";
 import Prof from './Prof.js';
+import Tasks from './Tasks.js';
 import Button from 'react-bootstrap/Button';
 import '../styles/Typer.css';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
+import DelayLink from 'react-delay-link';
+
 
 class Cont extends React.Component{
   render() {
@@ -36,8 +39,8 @@ class Cont extends React.Component{
 
       return (
                     <Router>
-        <div className="bdhome">
-        <div className="cont">
+        <div className="bdhome" >
+        <div className="cont" style={{marginLeft: -5, width: "110%"}}>
 
 
           <div className="bx1" id="home"><div className="boxes">
@@ -72,15 +75,18 @@ class Cont extends React.Component{
 
 
           <div className="bx5" id="tm"><div className="boxes">
-          <div className="sect"></div> <Button variant="light">LET'S GO!</Button>
- <div className="txt">TASK MANAGER<br/>The modern task manager tool is an interactive, creative mechanism.<br/><br/>
+          <div className="sect"></div> <Button variant="light" style={{fontFamily:"arial", fontSize: "17px"}}>LET'S GO!</Button>
+ <div className="txt">TASK MANAGER<br/><br/>The modern task manager tool is an interactive, creative mechanism.<br/><br/>
           - Post New Tasks!<br/>
           - Edit Existing Tasks!<br/>
           - Classify as 'In Progress' and 'Completed'<br/>
           - Color Coded! </div><img src = {Task}/>
           </div></div>
           <div className="con" id="con"><div className="contact"><p style={{color: "white", textAlign: "Right", padding:"15px", fontSize: "20px" }}>
-          CONTACT US</p></div></div>
+          CONTACT US</p> <p style={{color: "#b0c1d6",padding:"15px", fontSize: "17px", textAlign: "left", width: "450px", borderRight: "1px dotted #b0c1d6", float:"left"}}>
+           Shlok Naik - 118A1082 <br/> Shabarish Ramaswamy - 118A1077 <br/> TE-CE-D</p>
+           <p style={{color: "#b0c1d6",padding:"15px", fontSize: "16px", textAlign: "right"}}>SIES Graduate School of Technology,<br/> Sri Chandrasekarendra Saraswati Vidyapuram <br/> Sector-V, Nerul, Navi Mumbai, Maharashtra 400706 </p>
+           </div></div>
           <div className="nav">
           <div className="hd">
           HabitAble</div>
@@ -88,21 +94,22 @@ class Cont extends React.Component{
 
           </div>
           <div className="navbox">
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/>
           <Clock/>
           <br/><br/><br/><br/>
           <ScrollTo selector="#home">
         <div className="letbox" style={{marginTop:"-55px"}}><div className="qtxt">HOME</div><div class="linx"></div> </div></ScrollTo><br/>
         <ScrollTo selector="#tm">
-      <div className="letbox"><div className="qtxt">TASKS</div><div class="linx"></div> </div> </ScrollTo> <br/><br/><br/><br/>
+       <Link to="/tasks"><div className="letbox"><div className="qtxt">TASKS</div><div class="linx"></div> </div></Link> </ScrollTo> <br/><br/><br/><br/>
         <Link to='/profile'>  <div className="letbox"><div className="qtxt">PROFILE</div><div class="linx"></div> </div></Link><br/><br/><br/><br/>
-          <Route exact path ="/profile" render={ () => <Prof/>}/>
+
 
             <div className="letbox"><div className="qtxt">NOTIFICATIONS</div><div class="linx"></div></div><br/><br/><br/><br/>
               <div className="letbox"><div className="qtxt">FEEDBACK</div><div class="linx"></div></div><br/><br/><br/><br/>
               <ScrollTo selector="#con">
             <div className="letbox"><div className="qtxt">CONTACT US</div></div> </ScrollTo>
-
+            <Route exact path ="/profile" render={ () => <Prof/>}/>
+            <Route exact path ="/tasks" render={ () => <Tasks/>}/>
           </div>
 
           <div className="boxbck"></div>

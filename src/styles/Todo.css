@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 .bodyts {
-  min-height: 20vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color:white;
   background: #122230;
-  height: 610px;
+  height: 600px;
+  margin-top:-673px;
+  margin-left: -1100px;
+  width: 1350px;
+  position: absolute;
+
 }
 
 main {
@@ -28,9 +32,10 @@ button:hover
 .list-group {
   min-height: 1800px;
   background: #0a0e14;
-  width: 450px;
+  width: 430px;
   vertical-align: top;
-  margin-left: 50px;
+  margin-left: 70px;
+  margin-right: 30px;
 }
 
 .liner{
@@ -39,22 +44,23 @@ button:hover
   position: absolute;
   height: 37px;
   width: 100px;
-  margin-top: 23px; margin-left: 160px;
+  margin-top: 23px; margin-left: 180px;
 }
 
 .list-group-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background:  #122230;
+  background:  #233d54;
   border-radius: 10px;
   min-height: 30px;
-  width: 380px;
+  width: 405px;
   float: left;
   padding: 15px;
   margin: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 
@@ -70,7 +76,7 @@ p {
   font-family: McLaren, cursive;
 }
 
-.cont{
+.contr{
   height: 560px;
   width: 1247px;
   border-radius: 20px;
@@ -83,6 +89,7 @@ p {
   position:fixed;
   overflow-y: scroll;
   margin-bottom: 30px;
+
 }
 
 .list-group-items:hover{

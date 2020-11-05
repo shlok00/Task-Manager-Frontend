@@ -18,7 +18,8 @@ render(){
           fontFamily: "arial",
           background: "#173d96",
           color: "white",
-          minWidth: 850
+          minWidth: 850,
+          textAlign: "left"
         }}
       >
         PROFILE
@@ -29,7 +30,7 @@ render(){
           type="file"
           id="myFile"
           name="filename"
-          style={{ marginLeft: 70 }}
+          style={{ textAlign: "left", marginLeft: -25 }}
         />
         <input
           type="submit"
@@ -43,7 +44,7 @@ render(){
             marginLeft: 290,
             height: 35,
             width: 100,
-            marginTop: "-120px",
+            marginTop: "-130px",
             fontWeight: "bold",
             borderRadius: 7
           }}
@@ -54,7 +55,7 @@ render(){
           <br />
           <br/>
             <br/>
-          <h4>
+          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
             Name:{" "}
             <input
               type="text"
@@ -63,7 +64,7 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4>
+          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
             Age:{" "}
             <input
               type="number"
@@ -72,7 +73,7 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4>
+          <h4  style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
             Email:{" "}
             <input
               type="email"
@@ -82,7 +83,7 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4>
+          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15, marginTop:7}}>
             Password:{" "}
             <input
               type="password"
@@ -96,8 +97,8 @@ render(){
           <br />
           <br />
           <br />
-            <br/>
-              <br/>
+
+
           <input
             type="submit"
             className="subs"

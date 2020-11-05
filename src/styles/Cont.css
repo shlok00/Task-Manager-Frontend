@@ -8,11 +8,11 @@ img{
 
 .bdhome{
   height: 610px;
-  width: 100%;
   position: absolute;
   display: block;
   margin-top: -500px;
-  margin-left: -694px;
+  margin-left: -688px;
+
 }
 
 .btn{
@@ -44,7 +44,7 @@ img{
 }
 
 .boxbck{
-  margin-top:-35px;
+  margin-top:-38px;
 background: linear-gradient(to right,#000,60%,#14104a);
 height: 1350px;
 width: 1300px;
@@ -53,8 +53,8 @@ width: 1300px;
 
 .nav{
 background: #000;
-  height: 50px;
-  width: 110%;
+  height: 53px;
+  width: 84%;
   position: fixed;
   margin-top: -52px;
   margin-left: 0px;
@@ -62,15 +62,14 @@ background: #000;
 
 .navbox{
   background:black;
-  height: 545px;
+  height: 595px;
   width: 220px;
-  border-radius: 9px;
   position: fixed;
   top: 53px;
   padding: 3px;
   right: 2px;
   opacity:1;
-  margin-top:-5px;
+  margin-top:-55px;
 }
 
 .bx1{
@@ -148,6 +147,6 @@ box-shadow: 5px 5px 10px #151821;
   height: 220px;
   width: 1000px;
   margin-top: 1122px;
-  margin-left: 20px;
+  margin-left: 30px;
   position: absolute;
 }
