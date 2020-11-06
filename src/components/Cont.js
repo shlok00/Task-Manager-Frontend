@@ -75,7 +75,7 @@ class Cont extends React.Component{
 
 
           <div className="bx5" id="tm"><div className="boxes">
-          <div className="sect"></div> <Button variant="light" style={{fontFamily:"arial", fontSize: "17px"}}>LET'S GO!</Button>
+          <div className="sect"></div> 
  <div className="txt">TASK MANAGER<br/><br/>The modern task manager tool is an interactive, creative mechanism.<br/><br/>
           - Post New Tasks!<br/>
           - Edit Existing Tasks!<br/>

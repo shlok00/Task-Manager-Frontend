@@ -205,7 +205,8 @@ crossorigin="anonymous"/>
       </div>
     </div>
     <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #e38820", marginTop:"-40px"}}>
-      <h3 style={{fontsize: "16px", width: "600px", fontFamily: "Architects Daughter", textAlign: "center"}}>Scheduled Tasks</h3>
+      <h3 style={{fontsize: "16px", width: "270px", fontFamily: "Architects Daughter", textAlign: "center", marginLeft:"150px"}}>
+      Scheduled Tasks</h3>
       <ul className="list-group" data-name="todos-list"/>
 
     </div>
@@ -216,7 +217,7 @@ crossorigin="anonymous"/>
     </div>
 
   </main>
-  <h1 style={{color:"#e38820", padding:"10px", top:"0px", fontFamily: "Arial",
+  <h1 style={{color:"#fff", padding:"10px", top:"0px", fontFamily: "Arial",
    position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE TASK MANAGER</h1>
  </div>
 </div>
