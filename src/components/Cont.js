@@ -96,7 +96,7 @@ class Cont extends React.Component{
           <div className="navbox">
             <br/><br/><br/><br/><br/><br/><br/>
           <Clock/>
-          <br/><br/><br/><br/>
+          <br/><br/><br/><br/><br/><br/>
           <ScrollTo selector="#home">
         <div className="letbox" style={{marginTop:"-55px"}}><div className="qtxt">HOME</div><div class="linx"></div> </div></ScrollTo><br/>
         <ScrollTo selector="#tm">

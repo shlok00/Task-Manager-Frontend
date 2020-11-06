@@ -36,10 +36,18 @@ class App extends Component{
           <li class="list-group-items"  id="item${a}" draggable="true" data-id="${Date.now()}" style="position:relative; padding-left: 60px;">
           <ul style="list-style-type: none; margin-left: -40px;">
           <li>
-            <h4 contenteditable="true" id="title">Title</h4></li>
-            <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;
-            color: red;"><span style="font-size:13px; color: white;">${value}</span></h5></li>
-            <li><p style="display: inline; font-size:12px; color:#fff;">Scheduled: </p><input type="date" id="sched" value="2020-01-01" style="width:150px;
+            <h4 contenteditable="true" id="title" style="box-shadow: 3px 3px 10px #000;">Title</h4></li>
+            <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;  text-align: left;
+            color: red;"><span style="font-size:13px; color: white;   text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;">${value}</span></h5></li>
+            <li><p style="display: inline; font-size:12px; color:#fff;   text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;">Scheduled : </p><input type="date" id="sched" value="2020-01-01" style="width:150px;
              border:1px solid black; border-radius:10px;"/></li>
              <div class="liner"></div>
             </ul>
@@ -181,7 +189,7 @@ crossorigin="anonymous"/>
     <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "0px"}}>
       <div className="input-group-prepend">
       <br/><br/><br/><br/>
-        <span className="input-group-text"  style={{background: "#618685", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
+        <span className="input-group-text"  style={{background: "#e38820", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
       </div>
       <input
         type="text"
@@ -191,12 +199,12 @@ crossorigin="anonymous"/>
         onChange = {event => this.desc = event.target.value}
       />
       <div className="input-group-append">
-        <button className="btn btn-success" data-name="add-btn" style={{background: "#618685", height: "38px", marginTop: "-97px"}}>
+        <button className="btn btn-success" data-name="add-btn" style={{background: "#e38820", height: "38px", marginTop: "-97px"}}>
           Append
         </button>
       </div>
     </div>
-    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #48628a", marginTop:"-40px"}}>
+    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #e38820", marginTop:"-40px"}}>
       <h3 style={{fontsize: "16px", width: "600px", fontFamily: "Architects Daughter", textAlign: "center"}}>Scheduled Tasks</h3>
       <ul className="list-group" data-name="todos-list"/>
 
@@ -208,7 +216,7 @@ crossorigin="anonymous"/>
     </div>
 
   </main>
-  <h1 style={{color:"#fefbd8", padding:"10px", top:"0px", fontFamily: "Arial",
+  <h1 style={{color:"#e38820", padding:"10px", top:"0px", fontFamily: "Arial",
    position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE TASK MANAGER</h1>
  </div>
 </div>
