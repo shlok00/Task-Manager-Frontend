@@ -75,7 +75,7 @@ class Cont extends React.Component{
 
 
           <div className="bx5" id="tm"><div className="boxes">
-          <div className="sect"></div> 
+          <div className="sect"></div>
  <div className="txt">TASK MANAGER<br/><br/>The modern task manager tool is an interactive, creative mechanism.<br/><br/>
           - Post New Tasks!<br/>
           - Edit Existing Tasks!<br/>
@@ -93,7 +93,7 @@ class Cont extends React.Component{
 
 
           </div>
-          <div className="navbox">
+          <div className="slide-out" id="navbox">
             <br/><br/><br/><br/><br/><br/><br/>
           <Clock/>
           <br/><br/><br/><br/><br/><br/>

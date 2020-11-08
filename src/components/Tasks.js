@@ -4,6 +4,8 @@ import '../styles/Todo.css';
 import axios from 'axios';
 
 
+var token = localStorage.getItem('token');
+const tkx = JSON.parse(token);
 
 class App extends Component{
 
@@ -25,65 +27,183 @@ class App extends Component{
   componentDidMount(){
   const main = document.querySelector("main");
   var a = 1;
+  axios.post('/tasks', tkx).then(response=>{ localStorage.setItem('taskdata',JSON.stringify(response.data));}
+  ).catch(error=>{alert("some alert"); console.log(error.status); console.log(tkx)});
+
+  var tsks = localStorage.getItem('taskdata');
+  var task = JSON.parse(tsks);
+  console.log(task.tasks.length);
+
+  for (var i=0; i<task.tasks.length; i++)
+  {
+
+  if(task.tasks[i].completed == "false")
+  {  const template1 = `
+    <li class="list-group-items"  id="${task.tasks[i]._id}" " draggable="true" data-id="${Date.now()}" style="position:relative;
+     padding-left: 60px; background: ${task.tasks[i].color};">
+    <ul style="list-style-type: none; margin-left: -40px;">
+    <li>
+      <h4 contenteditable="true" id="title" style="box-shadow: 3px 3px 10px #000;">
+    ${task.tasks[i].title}</h4></li>
+      <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;  text-align: left;
+      color: red;"><span style="font-size:13px; color: white;   text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;">${task.tasks[i].description}</span></h5></li>
+      <li><p style="display: inline; font-size:12px; color:#fff;   text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;">Scheduled : </p><input type="date" id="sched" value="${task.tasks[i].scheduled}" style="width:150px;
+       border:1px solid black; border-radius:10px;"/>   <button data-name="edit-btn" style="font-size: 12px; font-family:arial; background: #048226;
+       box-shadow: 2px 2px 10px #000; color: white; border:none; padding: 4px; border-radius: 8px; margin-left: 20px;">UPDATE</button></li>
+       <div class="liner"></div>
+      </ul>
+      <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
+       position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+         <input type="color" id="favcolor" name="favcolor" value="${task.tasks[i].color}" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
+         onChange="document.getElementById('${task.tasks[i]._id}').style.background = value">
+
+    </li>`;
+  const todosList = main.querySelector('[data-name="todos-list"]');
+  todosList.insertAdjacentHTML("beforeend", template1);}
+  else{
+    const template1 = `
+    <li class="list-group-items completed"  id="${task.tasks[i]._id}" " draggable="true" data-id="${Date.now()}" style="position:relative;
+     padding-left: 60px; background: ${task.tasks[i].color};">
+    <ul style="list-style-type: none; margin-left: -40px;">
+    <li>
+      <h4 contenteditable="true" id="title" style="box-shadow: 3px 3px 10px #000;">
+    ${task.tasks[i].title}</h4></li>
+      <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;  text-align: left;
+      color: red;"><span style="font-size:13px; color: white;   text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;">${task.tasks[i].description}</span></h5></li>
+      <li><p style="display: inline; font-size:12px; color:#fff;   text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;">Scheduled : </p><input type="date" id="sched" value="${task.tasks[i].scheduled}" style="width:150px;
+       border:1px solid black; border-radius:10px;"/>   <button data-name="edit-btn" style="font-size: 12px; font-family:arial; background: #048226;
+       box-shadow: 2px 2px 10px #000; color: white; border:none; padding: 4px; border-radius: 8px; margin-left: 20px;">UPDATE</button></li>
+       <div class="liner"></div>
+      </ul>
+      <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
+       position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+         <input type="color" id="favcolor" name="favcolor" value="${task.tasks[i].color}" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
+         onChange="document.getElementById('${task.tasks[i]._id}').style.background = value">
+
+    </li>`;
+    const compList = main.querySelector('[data-name="completed-list"]');
+    compList.insertAdjacentHTML("beforeend", template1);
+  }
+}
+
+
+
   main.addEventListener("click", (e) => {
+
     if (e.target.tagName === "BUTTON") {
       const { name } = e.target.dataset;
       if (name === "add-btn") {
-        const todoInput = main.querySelector('[data-name="todo-input"]');
-        if (todoInput.value.trim() !== "") {
-          const value = todoInput.value;
-          const template = `
-          <li class="list-group-items"  id="item${a}" draggable="true" data-id="${Date.now()}" style="position:relative; padding-left: 60px;">
-          <ul style="list-style-type: none; margin-left: -40px;">
-          <li>
-            <h4 contenteditable="true" id="title" style="box-shadow: 3px 3px 10px #000;">Title</h4></li>
-            <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;  text-align: left;
-            color: red;"><span style="font-size:13px; color: white;   text-shadow:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;">${value}</span></h5></li>
-            <li><p style="display: inline; font-size:12px; color:#fff;   text-shadow:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;">Scheduled : </p><input type="date" id="sched" value="2020-01-01" style="width:150px;
-             border:1px solid black; border-radius:10px;"/></li>
-             <div class="liner"></div>
-            </ul>
-            <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
-             position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
-               <input type="color" id="favcolor" name="favcolor" value="#ff0000" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
-               onChange="document.getElementById('item${a}').style.background = value;"
-               >
+        const todoInput1 = main.querySelector('[data-name="todo-input"]');
+        if (todoInput1.value.trim() !== "") {
+          const value = todoInput1.value;
+          const datatask = {
+             task: {
+              title: "Title",
+              description: value,
+              completed: "false",
+              scheduled: new Date("2020-01-01")
+         },
+           accessToken: tkx.accessToken
+          };
+          axios.post(`/task`,datatask).then(response=>{alert("New Task Created!"); console.log(response.data);
+            localStorage.setItem('tempid',JSON.stringify(response.data));
+            var tempid = localStorage.getItem('tempid');
+            var tmp = JSON.parse(tempid);
+            console.log(tmp._id);
+            var tmpid = tmp._id;
+            const template = `
+            <li class="list-group-items"  id="${tmpid}" draggable="true" data-id="${Date.now()}" style="position:relative; padding-left: 60px;">
+            <ul style="list-style-type: none; margin-left: -40px;">
+            <li>
+              <h4 contenteditable="true" id="title" style="box-shadow: 3px 3px 10px #000;">Title</h4></li>
+              <li><h5 contenteditable="true" id="desc" style="font-size:20px; padding:5px; font-weight: bold;  text-align: left;
+              color: red;"><span style="font-size:13px; color: white;   text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;">${value}</span></h5></li>
+              <li><p style="display: inline; font-size:12px; color:#fff;   text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;">Scheduled : </p><input type="date" id="sched" value="2020-01-01" style="width:150px;
+               border:1px solid black; border-radius:10px;"/><button data-name="edit-btn" style="font-size: 12px; font-family:arial; background: #048226;
+               box-shadow: 2px 2px 10px #000; color: white; border:none; padding: 4px; border-radius: 8px; margin-left: 20px;">UPDATE</button>
+               </li>
+               <div class="liner"></div>
+              </ul>
+              <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
+               position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+                 <input type="color" id="favcolor" name="favcolor" value="#ff0000" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
+                 onChange="document.getElementById('${tmpid}').style.background = value;"
+                 >
 
-          </li>`;
+            </li>`;
 
-          const todosList = main.querySelector('[data-name="todos-list"]');
-          todosList.insertAdjacentHTML("beforeend", template);
-          todoInput.value = "";
-          const id = null;
+              const todosList1 = main.querySelector('[data-name="todos-list"]');
+              todosList1.insertAdjacentHTML("beforeend", template);
+              todoInput1.value = "";
+
+          }
+        ).catch(error=>{ if(error.status === 500){alert("Error Creating Task!"); console.log(error.status);}});
+
+
+
           a++;
-        //**  axios.get('http://habitable-productivityapp.herokuapp.com/tasks').then(response=>{console.log(response.data); id = response.data;}) **/
-
-          const data1 = {
-       user: this.user,
-       title: this.title,
-       description: this.desc,
-       completed: this.compl,
-       scheduled: this.sched
-     };
-        /** axios.post('http://habitable-productivityapp.herokuapp.com/task',data1).then(res=>{console.log(res.response.status); alert('Task added to Database');}).catch(
-            err=>{console.log(err.response.status); alert('Error Adding Task to Database');}
-          );**/
         }
 
-      } else if (name === "remove-btn") {
-        e.target.parentElement.remove();
-        /**axios.delete('http://habitable-productivityapp.herokuapp.com/task/${id}'); **/
       }
+
+      else if (name === "remove-btn") {
+        var id = e.target.parentElement.id;
+        console.log(id);
+        const d = {accessToken: tkx.accessToken};
+        axios.put(`/task/${id}`,d
+        ).then(response=>{alert("Task Removed Successfully");}).catch(error=>{alert("Error in Deleting Task!");});
+        e.target.parentElement.remove();      }
+
+        else if (name === "edit-btn")
+        { var id = e.target.parentElement.parentElement.parentElement.id;
+          var date = e.target.previousSibling.previousSibling.value;
+          var desc= e.target.parentElement.previousSibling.previousSibling.lastChild.textContent;
+          var titl = e.target.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.lastChild.textContent;
+          var col = e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.value;
+          console.log(id,date,desc,titl,col);
+
+          const dd = {
+            task: {
+              scheduled: date,
+              title: titl,
+              description: desc,
+              color: col
+            },
+            accessToken: tkx.accessToken
+          };
+          axios.patch(`/task/${id}`,dd).then(response=>{alert("Task Updated Successfully");}).catch(error=>{alert("Error in Updating Task!");});
     }
-  });
+
+      }
+  }
+
+
+);
+
 
   main.addEventListener("dragenter", (e) => {
     if (e.target.classList.contains("list-group")) {
@@ -151,21 +271,34 @@ class App extends Component{
       const { name } = e.target.dataset;
 
       if (name === "completed-list") {
-        if (todo.classList.contains("in-progress")) {
-          todo.classList.remove("in-progress");
-        }
         todo.classList.add("completed");
-      } else if (name === "in-progress-list") {
-        if (todo.classList.contains("completed")) {
-          todo.classList.remove("completed");
-        }
-        todo.classList.add("in-progress");
-      } else {
+        var id = todo.id;
+        const dd = {
+          task: {
+            completed: "True"
+          },
+          accessToken: tkx.accessToken
+        };
+        axios.patch(`/task/${id}`,dd).then(response=>{alert("Task Completed Successfully");}).catch(error=>{alert("Error in Completing Task!");});
+      }
+
+      else {
         todo.className = "list-group-items";
+        var id = todo.id;
+        const dd = {
+          task: {
+            completed: "False"
+          },
+          accessToken: tkx.accessToken
+        };
+        axios.patch(`/task/${id}`,dd);
       }
     }
   });
+
+
   }
+
 
   render(){
     const {user} = this.state;
@@ -218,7 +351,14 @@ crossorigin="anonymous"/>
 
   </main>
   <h1 style={{color:"#fff", padding:"10px", top:"0px", fontFamily: "Arial",
-   position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE TASK MANAGER</h1>
+   position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE PRODUCTIVITY APP
+   <select id="nav" name="NAVIGATION" style={{background: "black", color:"white", marginLeft:"790px", border:"none"}}>
+  <option value="HOME">HOME</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+</select>
+   </h1>
  </div>
 </div>
 );

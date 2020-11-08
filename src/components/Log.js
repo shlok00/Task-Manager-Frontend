@@ -8,6 +8,7 @@ import * as axios from "axios";
 
 class Log extends Component
 {
+
   constructor()
   {
     super()
@@ -26,13 +27,11 @@ class Log extends Component
 
   handleHash = (event) => {
     event.preventDefault();
-    axios({
-  method: 'post',
-  url: `https://habitable-productivityapp.herokuapp.com/user/confirm/${this.hash}`,
-  data: {}}).then(response=>{
+
+    axios.post(`/user/confirm/${this.hash}`,this.token ).then(response=>{
        console.log(response.status);
        alert("Email verification successful!");
-  }).catch(error=>{console.log(error.response.status); alert("Unsuccessful! Try again!")});
+  }).catch(error=>{console.log(error.response.data); alert("Unsuccessful! Try again!")});
 
   }
 
@@ -45,16 +44,20 @@ class Log extends Component
        password: this.password
      };
 
-   axios.post('http://habitable-productivityapp.herokuapp.com/user/login',data1).then(response=>{
+   axios.post('/user/login',data1).then(response=>{
       if(response.status == 200)
-      { console.log(response.status);
+      { console.log(response.data);
+        this.token = response.data;
         alert("Login Successful!");
+        localStorage.setItem('email', JSON.stringify(this.email));
+        localStorage.setItem('token', JSON.stringify(this.token));
 
       }
      }
    ).catch(error=>{if(error.status != 200){
      console.log(error.status);
       alert("Login Error Detected!");
+      console.log(error.data);
    }});
 
 
@@ -71,10 +74,10 @@ class Log extends Component
       password: this.password
     };
 
-    axios.post(`http://habitable-productivityapp.herokuapp.com/signup`,data).then(response=>{
+    axios.post(`/signup`,data).then(response=>{
         alert('SIGNUP successful!');
-        console.log(response.token);
-
+        localStorage.setItem('uname', JSON.stringify(this.username));
+        localStorage.setItem('age', JSON.stringify(this.age));
 
    }
    ).catch(err=> {console.log(err.status);
@@ -91,7 +94,7 @@ class Log extends Component
     const {password} = this.state;
     const {age} = this.state;
     const {username} = this.state;
-
+    const {token} = this.state;
   return(
     <Router>
     <div className="bd">

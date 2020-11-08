@@ -4,11 +4,47 @@ import '../styles/Prof.css';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import * as axios from "axios";
 
+var token = localStorage.getItem('token');
+const tkx = JSON.parse(token);
 
 class Prof extends React.Component{
+  constructor()
+  {
+    super()
+
+      this.state = {
+        age: null,
+        username: null
+    }
+  }
+
+
+    handleupdateSubmit = (event) =>
+     { event.preventDefault();
+       const datauser = {
+        username: this.username,
+        age: this.age,
+        accessToken: tkx.accessToken
+       };
+     axios.patch('/user',datauser).then(response=>{
+        if(response.status == 200)
+        {
+          alert('Information Updated!');
+        }
+       }
+     ).catch(error=>{if(error.status != 200){
+       alert('Error Encountered!');
+       console.log(tkx);
+     }});
+
+
+  }
 
 render(){
-
+  const {age} = this.state;
+  const {username} = this.state;
+  var email = localStorage.getItem('email');
+  var email =  JSON.parse(email);
   return(
     <div className="bodypr">
     <div className="containerprof">
@@ -51,16 +87,18 @@ render(){
         />
       </div>
       <div className="avbox" style={{ height: "80%" }}>
-        <form>
+        <form onSubmit={this.handleupdateSubmit}>
           <br />
           <br/>
             <br/>
           <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
-            Name:{" "}
+            Username:{" "}
             <input
               type="text"
-              placeholder="Edit your Name"
+              placeholder= "Enter new username"
               style={{ height: 25 }}
+              id="editname"
+              onChange={event => this.username = event.target.value}
             />{" "}
           </h4>
             <br/>
@@ -68,16 +106,18 @@ render(){
             Age:{" "}
             <input
               type="number"
-              placeholder="Edit your Age"
+              placeholder="Enter new age"
               style={{ height: 25 }}
+              id="editage"
+              onChange={event => this.age = event.target.value}
             />{" "}
           </h4>
             <br/>
           <h4  style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
-            Email:{" "}
+             Email:{" "}
             <input
               type="email"
-              placeholder="EMAIL"
+              value= {email}
               style={{ height: 25 }}
               disabled
             />{" "}
@@ -87,7 +127,7 @@ render(){
             Password:{" "}
             <input
               type="password"
-              placeholder="PASSWORD"
+              placeholder="********"
               style={{ height: 28 }}
               disabled
             />{" "}

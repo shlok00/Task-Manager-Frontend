@@ -6,6 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 import Log from './components/Log';
 import Cont from './components/Cont';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://habitable-productivityapp.herokuapp.com';
 
 
 ReactDOM.render(

@@ -60,7 +60,7 @@ background: #000;
   margin-left: 0px;
 }
 
-.navbox{
+#navbox{
   background:black;
   height: 680px;
   width: 220px;
@@ -71,6 +71,8 @@ background: #000;
   opacity:1;
   margin-top:-55px;
 }
+
+
 
 .bx1{
   background: #1d2354;
