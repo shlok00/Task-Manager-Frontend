@@ -51,6 +51,7 @@ class Log extends Component
         alert("Login Successful!");
         localStorage.setItem('email', JSON.stringify(this.email));
         localStorage.setItem('token', JSON.stringify(this.token));
+        document.getElementById('subs').disabled = false;
 
       }
      }
@@ -80,11 +81,7 @@ class Log extends Component
         localStorage.setItem('age', JSON.stringify(this.age));
 
    }
-   ).catch(err=> {console.log(err.status);
-       if(err.status === 409)
-        {alert('USER already exists!!');}
-        else if(err.status === 400)
-          {alert('Please fill in all fields');}});
+ ).catch(err=> {alert('SIGNUP ERROR!!')});
 
   }
 
@@ -164,7 +161,7 @@ class Log extends Component
       </div>
         <Link to="/landing">
         <input type="button" id="subs" value="CONTINUE" style={{marginLeft: "-400px",
-        height: "50px", width:"210px", borderRadius:"22px", fontSize:"20px", marginTop:"40px"}} className="continue"/>
+        height: "50px", width:"210px", borderRadius:"22px", fontSize:"20px", marginTop:"40px"}} className="continue" disabled/>
         </Link>
         <Route exact path ="/landing" render={ () => <Cont/>}/>
       </div>

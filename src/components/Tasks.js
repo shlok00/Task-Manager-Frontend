@@ -61,7 +61,7 @@ class App extends Component{
        <div class="liner"></div>
       </ul>
       <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
-       position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+       position:absolute; width: 28px; height: 28px;"><b>X</b></button>
          <input type="color" id="favcolor" name="favcolor" value="${task.tasks[i].color}" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
          onChange="document.getElementById('${task.tasks[i]._id}').style.background = value">
 
@@ -92,7 +92,7 @@ class App extends Component{
        <div class="liner"></div>
       </ul>
       <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
-       position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+       position:absolute; width: 28px; height: 28px;"><b>X</b></button>
          <input type="color" id="favcolor" name="favcolor" value="${task.tasks[i].color}" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
          onChange="document.getElementById('${task.tasks[i]._id}').style.background = value">
 
@@ -121,7 +121,7 @@ class App extends Component{
          },
            accessToken: tkx.accessToken
           };
-          axios.post(`/task`,datatask).then(response=>{alert("New Task Created!"); console.log(response.data);
+          axios.post(`/task`,datatask).then(response=>{ console.log(response.data);
             localStorage.setItem('tempid',JSON.stringify(response.data));
             var tempid = localStorage.getItem('tempid');
             var tmp = JSON.parse(tempid);
@@ -149,7 +149,7 @@ class App extends Component{
                <div class="liner"></div>
               </ul>
               <button class="btn  btn-sm" data-name="remove-btn"  style="background:#1ebd63; color: white; margin-left:300px; margin-top:-64px; border-radius: 50%;
-               position:absolute; width: 28px; height: 28px;"><b>✓</b></button>
+               position:absolute; width: 28px; height: 28px;"><b>X</b></button>
                  <input type="color" id="favcolor" name="favcolor" value="#ff0000" style= "height: 25px; width: 20px; border: none; margin-top: 70px; margin-left: -60px;"
                  onChange="document.getElementById('${tmpid}').style.background = value;"
                  >
@@ -175,7 +175,7 @@ class App extends Component{
         console.log(id);
         const d = {accessToken: tkx.accessToken};
         axios.put(`/task/${id}`,d
-        ).then(response=>{alert("Task Removed Successfully");}).catch(error=>{alert("Error in Deleting Task!");});
+        ).then(response=>{console.log('');}).catch(error=>{alert("Error in Deleting Task!");});
         e.target.parentElement.remove();      }
 
         else if (name === "edit-btn")
@@ -195,7 +195,7 @@ class App extends Component{
             },
             accessToken: tkx.accessToken
           };
-          axios.patch(`/task/${id}`,dd).then(response=>{alert("Task Updated Successfully");}).catch(error=>{alert("Error in Updating Task!");});
+          axios.patch(`/task/${id}`,dd).then(response=>{console.log('');}).catch(error=>{alert("Error in Updating Task!");});
     }
 
       }
@@ -279,7 +279,7 @@ class App extends Component{
           },
           accessToken: tkx.accessToken
         };
-        axios.patch(`/task/${id}`,dd).then(response=>{alert("Task Completed Successfully");}).catch(error=>{alert("Error in Completing Task!");});
+        axios.patch(`/task/${id}`,dd).then(response=>{console.log('');}).catch(error=>{alert("Error in Completing Task!");});
       }
 
       else {
