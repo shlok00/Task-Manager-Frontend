@@ -316,10 +316,10 @@ rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 crossorigin="anonymous"/>
-  <div className="contr" style={{position: "fixed"}}>
+  <div className="contr" style={{position: "fixed", marginTop: "160px"}}>
   <main className="row" style={{  maxWidth: "1200px"}}>
 
-    <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "0px"}}>
+    <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "-100px", position: "fixed"}}>
       <div className="input-group-prepend">
       <br/><br/><br/><br/>
         <span className="input-group-text"  style={{background: "#e38820", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
@@ -337,16 +337,16 @@ crossorigin="anonymous"/>
         </button>
       </div>
     </div>
-    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #e38820", marginTop:"-40px"}}>
-      <h3 style={{fontsize: "16px", width: "270px", fontFamily: "Architects Daughter", textAlign: "center", marginLeft:"150px"}}>
+    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #e38820", marginTop:"70px"}}>
+      <h3 style={{fontsize: "16px", width: "270px", fontFamily: "Architects Daughter", textAlign: "center", marginLeft:"150px", position: "fixed", marginTop:"-110px"}}>
       Scheduled Tasks</h3>
-      <ul className="list-group" data-name="todos-list"/>
+      <ul className="list-group" data-name="todos-list" style={{marginTop:"-30px"}}/>
 
     </div>
 
-    <div className="col-lg-6"style={{width: "1100px",marginTop:"-40px"}}>
-      <h3 style={{fontsize: "16px", fontFamily: "Architects Daughter"}}>Completed Tasks</h3>
-      <ul className="list-group" style={{borderRadius:"0px" }}  data-name="completed-list" />
+    <div className="col-lg-6"style={{width: "1100px",marginTop:"70px"}}>
+      <h3 style={{fontsize: "16px", fontFamily: "Architects Daughter", position: "fixed", marginLeft:"160px", marginTop:"-110px"}}>Completed Tasks</h3>
+      <ul className="list-group" style={{borderRadius:"0px", marginTop:"-30px"}}  data-name="completed-list" />
     </div>
 
   </main>
