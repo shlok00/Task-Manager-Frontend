@@ -2,7 +2,7 @@
   background: #03214d;  align-items: center;
 position: fixed;
 height: 100%;
-width: 82%;
+width: 82.2%;
 margin-left: -1040px;
 margin-top: -515px;
 
@@ -29,8 +29,7 @@ margin-top: -515px;
     margin: 60px;
     border: 1px solid #a9b0b0;
     height: 250px;
-    min-width: 250px;
-    border-radius: 10px;
+    width: 250px;
     margin-bottom: 30px;
   }
 

@@ -13,9 +13,9 @@
     blink-caret 0.5s step-end infinite;
  animation-delay: 2s;
  opacity:1;
- margin-left: 370px;
+ margin-left: 250px;
  margin-top: 30px;
- font-size: 60px;
+ font-size: 85px;
  font-family: McLaren, cursive;
  position: absolute;
  font-weight: bold;
@@ -38,7 +38,7 @@
  animation-delay: 2s;
  opacity:1;
  position: absolute;
- margin-left: 360px;
+ margin-left: 300px;
  margin-top: 250px;
  font-size: 20px;
  font-family: McLaren, cursive;
@@ -51,7 +51,7 @@
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 410px;}}
+  to { width: 560px;}}
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
@@ -61,7 +61,7 @@
 
 @keyframes typing1 {
   from { width: 0 }
-  to { width: 410px;}}
+  to { width: 400px;}}
 
 /* The typewriter cursor effect */
 @keyframes blink-caret1 {

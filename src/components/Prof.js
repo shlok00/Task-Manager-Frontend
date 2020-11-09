@@ -6,6 +6,9 @@ import * as axios from "axios";
 
 var token = localStorage.getItem('token');
 const tkx = JSON.parse(token);
+var ava='';
+var avat='';
+var url = '';
 
 class Prof extends React.Component{
   constructor()
@@ -14,10 +17,35 @@ class Prof extends React.Component{
 
       this.state = {
         age: null,
-        username: null
+        username: null,
+        file: null
     }
   }
 
+componentDidMount(){
+  const tk = {accessToken: tkx.accessToken};
+  axios.put('/user/profile/avatar',tk).then(response=>{console.log(response.data); url = response.data;   document.getElementById('myImg').src = 'data:image/png;base64,'+url;
+  }).catch(error=>{alert('error!');
+  url='https://thumbs.dreamstime.com/b/default-avatar-photo-placeholder-profile-picture-default-avatar-photo-placeholder-profile-picture-eps-file-easy-to-edit-125707135.jpg';});
+  document.getElementById('myImg').src = url;
+
+
+  document.querySelector('#photo').addEventListener("change", e =>{
+    console.log(e.target.files[0]);
+    console.log(e.target.files);
+    this.file = e.target.files[0];
+            if (e.target.files && e.target.files[0]) {
+                 var reader = new FileReader();
+                 reader.onload = function (e) {
+                   console.log(e.target.result);
+                   ava=e.target.result;
+                     document.getElementById('myImg').src = e.target.result;
+                 };
+
+                console.log(reader.readAsDataURL(e.target.files[0]));
+             }
+           }
+         );}
 
     handleupdateSubmit = (event) =>
      { event.preventDefault();
@@ -40,16 +68,37 @@ class Prof extends React.Component{
 
   }
 
+  handleUpload = (event) =>
+  {
+    event.preventDefault();
+    let file = this.file;
+    var formdata = new FormData();
+    formdata.append('avatar',file);
+    formdata.append('accessToken', tkx.accessToken);
+
+    axios.post('/user/profile/avatar',formdata,{
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+}).then(response=>{alert('avatar upload successful!');}).catch(error=>{alert('upload not successful'); console.log(error.response.data);
+
+});
+  }
+
+
 render(){
   const {age} = this.state;
   const {username} = this.state;
+  const {file} = this.state;
+
   var email = localStorage.getItem('email');
   var email =  JSON.parse(email);
+
+
   return(
     <div className="bodypr">
     <div className="containerprof">
-      <h2
-        style={{
+      <h2 style={{
           padding: 20,
           fontFamily: "arial",
           background: "#173d96",
@@ -61,13 +110,16 @@ render(){
         PROFILE
       </h2>
       <div className="avbox">
-        <div className="photo" />
+      <img className="photo" id="myImg" src="https://thumbs.dreamstime.com/b/default-avatar-photo-placeholder-profile-picture-default-avatar-photo-placeholder-profile-picture-eps-file-easy-to-edit-125707135.jpg" alt="profile" />
         <input
           type="file"
-          id="myFile"
+          id="photo"
           name="filename"
+          accept=".png, .jpg, .jpeg"
           style={{ textAlign: "left", marginLeft: -25 }}
         />
+
+
         <input
           type="submit"
           className="ups"
@@ -84,7 +136,9 @@ render(){
             fontWeight: "bold",
             borderRadius: 7
           }}
+          onClick={this.handleUpload}
         />
+
       </div>
       <div className="avbox" style={{ height: "80%" }}>
         <form onSubmit={this.handleupdateSubmit}>

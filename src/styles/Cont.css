@@ -31,6 +31,13 @@ img{
   font-weight: bold;
 }
 
+.des{
+  background: linear-gradient(to bottom, black,#030f42,black);
+  height:90%;
+  width:100%;
+  position: absolute;
+  top:540px;
+}
 .bck{
   background: black;
   position: fixed;
@@ -46,7 +53,7 @@ img{
 .boxbck{
   margin-top:-38px;
 background: linear-gradient(to right,#000,60%,#14104a);
-height: 1350px;
+height: 1850px;
 width: 1300px;
 
 }
@@ -94,7 +101,7 @@ background: #000;
   background: #1d2354;
   height: 460px;
   width: 1000px;
-  margin-top: 572px;
+  margin-top: 1132px;
   margin-left: 20px;
   border-radius: 6px;
   position: absolute;
@@ -148,7 +155,7 @@ box-shadow: 5px 5px 10px #151821;
   background: linear-gradient(to left,#040a33,#1c2ea6);
   height: 220px;
   width: 1000px;
-  margin-top: 1122px;
+  margin-top: 1622px;
   margin-left: 30px;
   position: absolute;
 }

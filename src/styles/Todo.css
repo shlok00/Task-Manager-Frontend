@@ -6,8 +6,6 @@
   justify-content: center;
   align-items: center;
   color:white;
-
- /* background: #132029;*/
  background: url('../images/tasks.jpg');
  background-size: 900px 600px;
   height: 700px;
@@ -18,13 +16,13 @@
 
 }
 
+
 select:hover{
+
   cursor: pointer;
 }
 
-option{
-  cursor: pointer;
-}
+
 
 *main {
   max-width: 900px;

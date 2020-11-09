@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/Todo.css';
 import axios from 'axios';
-
+import Cont from './Cont.js';
+import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 
 var token = localStorage.getItem('token');
 const tkx = JSON.parse(token);
@@ -309,7 +310,7 @@ class App extends Component{
 
     return(
 
-
+<Router>
 <div className="bodyts">
 <link
 rel="stylesheet"
@@ -350,17 +351,20 @@ crossorigin="anonymous"/>
     </div>
 
   </main>
+
   <h1 style={{color:"#fff", padding:"10px", top:"0px", fontFamily: "Arial",
    position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE PRODUCTIVITY APP
-   <select id="nav" name="NAVIGATION" style={{background: "black", color:"white", marginLeft:"790px", border:"none"}}>
-  <option value="HOME">HOME</option>
-  <option value="A">A</option>
-  <option value="B">B</option>
-  <option value="C">C</option>
+   <select id="nav" name="NAVIGATION" style={{background: "black", color:"white", marginLeft:"600px", border:"none"}}>
+  <option value="task">TASK MANAGER</option>
+  <option value="challenge">CHALLENGE A FRIEND</option>
+  <option value="habit">HABIT TRACKER</option>
+  <option value="home">HOME PAGE</option>
 </select>
    </h1>
  </div>
 </div>
+<Route exact path ="/landing" render={ () => <Cont/>}/>
+</Router>
 );
 };
 }
