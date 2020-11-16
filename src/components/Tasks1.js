@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import '../styles/Todo.css';
 import axios from 'axios';
 import Cont from './Cont.js';
+import Tasks2 from './Tasks2.js';
 import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 
 var token = localStorage.getItem('token');
 const tkx = JSON.parse(token);
 
-class App extends Component{
+class Tasks1 extends Component{
+
 
   constructor()
   {
@@ -309,15 +311,24 @@ class App extends Component{
     const {desk} = this.state;
 
     return(
-
-<Router>
+      <div>
 <div className="bodyts">
+ <Router>
+ <Route path="/habits" render={() => <Tasks2/>} />
+ <Route path="/landing"/>
+ </Router>
 <link
 rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 crossorigin="anonymous"/>
-  <div className="contr" style={{position: "fixed", marginTop: "160px"}}>
+<h1 style={{color:"#fff", padding:"5px", top:"0px", fontFamily: "McLaren, cursive",
+ position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"19px", marginLeft:"0px", left: "0px"}}>
+    <Link to="/landing" style={{textDecoration:"none", color:"white"}}>  HabitAble </Link>
+
+
+ </h1>
+  <div className="contr" style={{position: "fixed", marginTop: "210px"}}>
   <main className="row" style={{  maxWidth: "1200px"}}>
 
     <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "-100px", position: "fixed"}}>
@@ -352,22 +363,18 @@ crossorigin="anonymous"/>
 
   </main>
 
-  <h1 style={{color:"#fff", padding:"10px", top:"0px", fontFamily: "Arial",
-   position:"fixed", background: "black" ,width:"100%", textAlign: "left", fontSize:"20px", marginLeft:"0px", left: "0px"}}>HABITABLE - THE PRODUCTIVITY APP
-   <select id="nav" name="NAVIGATION" style={{background: "black", color:"white", marginLeft:"600px", border:"none"}}>
-  <option value="task">TASK MANAGER</option>
-  <option value="challenge">CHALLENGE A FRIEND</option>
-  <option value="habit">HABIT TRACKER</option>
-  <option value="home">HOME PAGE</option>
-</select>
-   </h1>
+
+
  </div>
+
+ </div>
+
+
 </div>
-<Route exact path ="/landing" render={ () => <Cont/>}/>
-</Router>
+
 );
 };
 }
 
 
-export default App
+export default Tasks1

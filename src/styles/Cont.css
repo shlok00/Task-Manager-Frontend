@@ -53,7 +53,7 @@ img{
 .boxbck{
   margin-top:-38px;
 background: linear-gradient(to right,#000,60%,#14104a);
-height: 1850px;
+height: 2850px;
 width: 1300px;
 
 }
@@ -155,7 +155,7 @@ box-shadow: 5px 5px 10px #151821;
   background: linear-gradient(to left,#040a33,#1c2ea6);
   height: 220px;
   width: 1000px;
-  margin-top: 1622px;
+  margin-top: 2622px;
   margin-left: 30px;
   position: absolute;
 }

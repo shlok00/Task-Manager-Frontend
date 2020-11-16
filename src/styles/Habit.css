@@ -1,0 +1,67 @@
+.chartblock{
+  height: 300px;
+  width: 300px;
+  border-radius: 17px;
+
+}
+
+.inputsblock{
+  height: 87%;
+  width: 43%;
+  top:10px;
+  left:0px;
+  border: 1px solid #68b8cc;
+  position: fixed;
+  color: white;
+  margin:35px;
+  float: left;
+  background: #0c1926;
+  border-radius: 17px;
+
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+body {
+background-attachment: fixed;
+background-size: contain;
+  /* background by SVGBackgrounds.com */
+}
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-left: 4%;
+  margin-top: 4%;
+}
+
+.calendar-today {
+  background: linear-gradient(to bottom,#1ba892,#5cd1db,#3489c2,#60397d);
+  color: #ffffff;
+  font-family: 'Lato', sans serif;
+  padding: 10px 20px 50px;
+  text-align: center;
+  width: 220px;
+  height: 230px;
+  border-radius: 20px;
+  text-shadow:
+          2px 2px 0 #000;
+}
+
+.month-label {
+  font-size: 35px;
+}
+
+.day-label {
+  font-size: 55px;
+  font-weight: 130;
+  line-height: 120px;
+  padding-top: 0px;
+  background: #fff;
+  border-radius: 20px;
+  color: #000;
+}

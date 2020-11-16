@@ -17,10 +17,37 @@
   margin: 13px;
 }
 
+.kk:hover{
+  background: #3d4f8f;
+  cursor: pointer;
+  color: white;
+}
+
+
+.sidy{
+opacity: 0.0;
+left:67%; top:41.5%; width: 182px; list-style-type: none;
+padding:5px; position:fixed; font-size:16px; font-family: McLaren, cursive; color:#8fbfff;
+background: black;
+}
+
+.sidy:hover{
+opacity: 1;
+}
+
+.abc:hover .sidy{
+opacity: 1.0;
+background: red;
+}
+
 .letbox:hover{
   background: #3d4f8f;
   cursor: pointer;
 
+}
+
+.letbox:hover .sidy{
+  opacity: 1;
 }
 
 .letbox:hover .qtxt{
@@ -36,9 +63,8 @@
 }
 
 .boxes{
-  height: 420px;
-  width: 960px;
-  margin: 18px;
+  height: 460px;
+  width: 1000px;
   border-radius: 8px;
   background: black;
   box-shadow: 7px 7px 20px #020305;
@@ -49,11 +75,11 @@
   text-align: center;
   padding: 40px;
   height: 270px;
-  width: 530px;
+  width: 830px;
   margin: 30px;
-  background: #0a0636;
+  background: #000;
   border-radius: 9px;
-  opacity: 0.8;
+  opacity: 0.6;
   box-shadow: 4px 4px 25px #7d8eff;
   position:absolute;
   color: white;
@@ -63,12 +89,12 @@
 .txt{
   opacity: 1;
   height: 270px;
-  width: 530px;
+  width: 830px;
   color:white;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 15px;
   position: absolute;
-  text-align: left;
+  text-align: center;
   margin: 70px;
   font-size: 20px;
 

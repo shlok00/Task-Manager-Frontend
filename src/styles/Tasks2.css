@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
+
+
+.habits{
+  top:0px;
+  left:0px;
+  height:105%;
+  width:100%;
+  background: #000;
+  position: fixed;
+  align-items: center;
+}
+
+.habicon{
+  background: #063145;
+  top:0;
+  left:20px;
+  height: 98%;
+  width: 90%;
+  position: absolute;
+}
+
+.movup{
+font-family: arial;
+font-size: 24px;
+animation: mover 1.5s linear infinite alternate;
+float: left;
+font-weight: bold;
+color: #fff;
+background: black;
+margin: 5px;
+padding: 3px;
+}
+
+.movdown{
+  font-family: arial;
+  font-size: 24px;
+  animation: moverd 1.5s linear infinite alternate;
+  float: left;
+  font-weight: bold;
+  color: #fff;
+  background: black;
+  margin: 5px;
+  padding: 3px;
+
+}
+
+#heads{
+  font-family: McLaren, cursive;
+}
+@keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-5px); }
+}
+
+@keyframes moverd {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(3px); }
+}
