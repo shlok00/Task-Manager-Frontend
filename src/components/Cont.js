@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from './Clock.js';
+import Feed from './Feedback.js';
 import '../styles/Cont.css';
 import '../styles/Write.css';
 import Back from '../images/back.jpg';
@@ -37,7 +38,18 @@ class Cont extends React.Component {
     });
   }
 
+  TriggerOutlook = (event) =>
+
+          {    event.preventDefault();
+              var body = escape('Send us your feedback' + String.fromCharCode(13));
+
+              var subject = "FEED BACK!";
+              window.location.href = "mailto:a.habitable_team@yahoo.com?body="+body+"&subject="+subject;
+
+                  }
   render() {
+
+
 
     window.addEventListener('load', (event) => {
 
@@ -285,7 +297,7 @@ class Cont extends React.Component {
       <
       div className = "letbox" > < div className = "qtxt" > NOTIFICATIONS < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
       <
-      div className = "letbox" > < div className = "qtxt" > FEEDBACK < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
+      div className = "letbox" onClick={this.TriggerOutlook} > < div className = "qtxt" > FEEDBACK < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
       <
       ScrollTo selector = "#con" >
       <
