@@ -2,7 +2,7 @@ import React from 'react';
 import Clock from './Clock.js';
 import '../styles/Cont.css';
 import '../styles/Write.css';
-import Task from '../images/task.gif';
+import Back from '../images/back.jpg';
 import Sleep from '../images/sleep.gif';
 import Heal from '../images/health.gif';
 import Work from '../images/work.gif';
@@ -135,7 +135,7 @@ class Cont extends React.Component {
       -Edit Existing Tasks! < br / >
       -Schedule to Notify! < br / >
       -Color Coded! < /span></div > < img src = {
-        Task
+        Back
       }
       /> <
       /div></div >
@@ -163,7 +163,7 @@ class Cont extends React.Component {
       -Edit Existing Tasks! < br / >
       -Schedule to Notify! < br / >
       -Color Coded! < /span></div > < img src = {
-        Heal
+        Back
       }
       /> <
       /div></div >
@@ -191,7 +191,7 @@ class Cont extends React.Component {
       -Edit Existing Tasks! < br / >
       -Schedule to Notify! < br / >
       -Color Coded! < /span></div > < img src = {
-        Work
+        Back
       }
       /> <
       /div></div >
