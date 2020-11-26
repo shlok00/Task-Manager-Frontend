@@ -164,6 +164,8 @@ class Log extends Component
         height: "50px", width:"210px", borderRadius:"22px", fontSize:"20px", marginTop:"40px"}} className="continue" disabled/>
         </Link>
         <Route exact path ="/landing" render={ () => <Cont/>}/>
+        <Route exact path ="/" />
+
       </div>
     </div>
   </div>
@@ -172,7 +174,6 @@ class Log extends Component
 
 );
 };
-
 
 }
 

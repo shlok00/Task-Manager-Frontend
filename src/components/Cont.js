@@ -53,6 +53,14 @@ class Cont extends React.Component {
               window.location.href = "mailto:a.habitable_team@yahoo.com?body="+body+"&subject="+subject;
 
                   }
+
+        Logout = (event) =>
+                   { event.preventDefault();
+                     window.history.go(-1);
+                   }
+
+
+
   render() {
 
 
@@ -85,6 +93,8 @@ class Cont extends React.Component {
             });
 
           });
+
+
 
     return (
 
@@ -137,7 +147,7 @@ class Cont extends React.Component {
       /div></div >
 
       <
-      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "190px"}}
+      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "50px"}}
        >
       <
       br / > < br / >< span data-aos = "zoom-out"
@@ -148,7 +158,7 @@ class Cont extends React.Component {
         data-aos-delay = "900" >  incididunt ut labore et dolore magna aliqua. </span><
         br / > < br / >
         < span data-aos = "zoom-out"
-        data-aos-delay = "1800" >
+        data-aos-delay = "1200" >
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt. </span>< /h2>
         <div className="carcont">
         <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs = {false}>
@@ -247,11 +257,11 @@ class Cont extends React.Component {
 
        <
       /ul>
-      <
-      br / > < br / > < br / > < br / ><br/><br/><
+    <span style={{fontSize:"30px", marginLeft:"70%", paddingTop:"10px", textShadow:"1px 1px 30px #f5e876"}}>🔔</span> <div className="nots">0</div>  <
+      br / >< br / > < br / > < br / ><br/><br/><
       Clock / >
       <
-      br / > < br / > < br / ><br/>
+      br / > < br / > < br / ><br/><br/>
 
       <
       Link to = "/landing" > < div className = "letbox"
@@ -266,9 +276,7 @@ class Cont extends React.Component {
       br / > < br / > < br / > < br / >
       <
       Link to = '/profile' > < div className = "letbox" > < div className = "qtxt" > PROFILE < /div><div className="linx"></div > < /div></Link > < br / > < br / > < br / > < br / >
-      <Link to = '/notifications'>
-      <
-      div className = "letbox" > < div className = "qtxt" > NOTIFICATIONS < /div><div className="linx"></div > < /div></Link><br/ > < br / > < br / > < br / >
+
       <
       div className = "letbox" onClick={this.TriggerOutlook} > < div className = "qtxt" > FEEDBACK < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
       <
@@ -276,7 +284,7 @@ class Cont extends React.Component {
       <
       div className = "letbox" > < div className = "qtxt" > CONTACT US < /div><div className="linx"></div ></div > <br/ > < br / > < br / > < br / >< /ScrollTo>
       <
-      div className = "letbox" onClick={this.TriggerOutlook} > < div className = "qtxt" > LOGOUT < /div><div className="linx"></div > < /div>
+      div className = "letbox" onClick={this.Logout} > < div className = "qtxt" > LOGOUT < /div> < /div>
 
       <
       /div>
@@ -287,12 +295,7 @@ class Cont extends React.Component {
         () => < Prof / >
       }
       />
-      <
-      Route exact path = "/notifications"
-      render = {
-        () => < Notis / >
-      }
-      />
+
       <
       Route exact path = "/tasks"
       render = {

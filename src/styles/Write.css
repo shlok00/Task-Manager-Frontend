@@ -44,7 +44,7 @@ background: #3d4f8f;
 
 .sidy{
 opacity: 0.0;
-left:67%; top:32.5%; width: 182px; list-style-type: none;
+left:67%; top:38.5%; width: 182px; list-style-type: none;
 padding:5px; position:fixed; font-size:16px; font-family: McLaren, cursive; color:#8fbfff;
 background: black;
 }
@@ -80,7 +80,7 @@ background: black;
   background: black;
   box-shadow: 7px 7px 20px #020305;
   position: absolute;
-  margin-left: 150px;
+  margin-left: 20px;
 }
 
 .sect{

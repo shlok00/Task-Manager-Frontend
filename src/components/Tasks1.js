@@ -193,8 +193,7 @@ class Tasks1 extends Component{
               scheduled: date,
               title: titl,
               description: desc,
-              color: col,
-              notify: true
+              color: col
             },
             accessToken: tkx.accessToken
           };
