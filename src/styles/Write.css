@@ -23,22 +23,33 @@
   color: white;
 }
 
+.logbuts{
+  height: 34px;
+  width: 100px;
+  border-radius: 5px;
+  background: black;
+  border: 1px outset #7b98ed;
+  box-shadow: inset -1px -1px 10px #7b98ed;
+  color: white;
+  margin-top: 5px;
+  margin-left: 60px;
+position: absolute;
+}
+
+.logbuts:hover{
+cursor:pointer;
+background: #3d4f8f;
+
+}
 
 .sidy{
 opacity: 0.0;
-left:67%; top:41.5%; width: 182px; list-style-type: none;
+left:67%; top:32.5%; width: 182px; list-style-type: none;
 padding:5px; position:fixed; font-size:16px; font-family: McLaren, cursive; color:#8fbfff;
 background: black;
 }
 
-.sidy:hover{
-opacity: 1;
-}
 
-.abc:hover .sidy{
-opacity: 1.0;
-background: red;
-}
 
 .letbox:hover{
   background: #3d4f8f;
@@ -69,6 +80,7 @@ background: red;
   background: black;
   box-shadow: 7px 7px 20px #020305;
   position: absolute;
+  margin-left: 150px;
 }
 
 .sect{

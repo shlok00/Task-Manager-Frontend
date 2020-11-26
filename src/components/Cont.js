@@ -4,6 +4,8 @@ import Feed from './Feedback.js';
 import '../styles/Cont.css';
 import '../styles/Write.css';
 import Back from '../images/back.jpg';
+import Back1 from '../images/back1.png';
+import Back2 from '../images/back2.png';
 import Sleep from '../images/sleep.gif';
 import Heal from '../images/health.gif';
 import Work from '../images/work.gif';
@@ -14,8 +16,10 @@ import Gs from '../images/gs.png';
 import Gw from '../images/gw.png';
 import ScrollTo from "react-scroll-into-view";
 import Prof from './Prof.js';
+import Notis from './Notis.js';
 import Tasks from './Tasks1.js';
 import Tasks2 from './Tasks2.js';
+import Tasks3 from './Tasks3.js';
 import Button from 'react-bootstrap/Button';
 import '../styles/Typer.css';
 import {
@@ -28,6 +32,8 @@ import {
 import DelayLink from 'react-delay-link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 
@@ -64,7 +70,21 @@ class Cont extends React.Component {
       }, 2000);
 
 
-    })
+            document.getElementById('tsks').addEventListener('mouseenter', e => {
+              document.getElementById('blockboxs').style.opacity = 1;
+
+            });
+
+            document.getElementById('tsks').addEventListener('mouseleave', e => {
+              document.getElementById('blockboxs').style.opacity = 0;
+              document.getElementById('blockboxs').addEventListener('mouseenter', e => {
+                document.getElementById('blockboxs').style.opacity = 1;});
+                document.getElementById('blockboxs').addEventListener('mouseleave', e => {
+                  document.getElementById('blockboxs').style.opacity = 0;});
+
+            });
+
+          });
 
     return (
 
@@ -99,7 +119,7 @@ class Cont extends React.Component {
         {
           marginTop: "400px"
         }
-      } > SIMPLE.EFFECTIVE.MODERN. < /div> <div className="type1" style={{marginTop: "30px", fontSize:"19px"}}>YOUR BRAND NEW BESTFRIEND!</div >
+      } > SIMPLE. EFFECTIVE. MODERN. < /div> <div className="type1" style={{marginTop: "30px", fontSize:"19px"}}>YOUR BRAND NEW BESTFRIEND!</div >
 
       <
       img src = {
@@ -117,96 +137,45 @@ class Cont extends React.Component {
       /div></div >
 
       <
-      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "50px"}}
-      data-aos = "zoom-out" >
+      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "190px"}}
+       >
       <
-      br / > < br / >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <
+      br / > < br / >< span data-aos = "zoom-out"
+      data-aos-delay = "600" >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </span> <
         br / > < br / >
-        incididunt ut labore et dolore magna aliqua. <
+        < span data-aos = "zoom-out"
+        data-aos-delay = "900" >  incididunt ut labore et dolore magna aliqua. </span><
         br / > < br / >
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt. < /h2>
-
-        <
-        div className = "bx5"
-      id = "tm" > <
-      div className = "boxes" >
-      <
-      div className = "sect" > < /div> <
-      div className = "txt"
-      style = {
-        {
-          fontSize: "23px"
-        }
-      } > < span data-aos = "zoom-up" > TASK MANAGER < /span><br/ > < br / > < span data-aos = "zoom-up"
-      data-aos-delay = "600" > The modern task manager tool is an interactive, creative mechanism. < /span><br/ > < br / >
-      <
-      span data-aos = "zoom-up"
-      data-aos-delay = "1100" >
-      -Post New Tasks! < br / >
+        < span data-aos = "zoom-out"
+        data-aos-delay = "1800" >
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt. </span>< /h2>
+        <div className="carcont">
+        <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs = {false}>
+                       <div>
+                           <img src={Back} />
+                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>TASK MANAGER</span> <br/><br/>-Post New Tasks! < br / >
       -Edit Existing Tasks! < br / >
       -Schedule to Notify! < br / >
-      -Color Coded! < /span></div > < img src = {
-        Back
-      }
-      /> <
-      /div></div >
-      <
-      div className = "bx5"
-      id = "tm"
-      style = {
-        {
-          marginTop: "1622px"
-        }
-      } > < div className = "boxes" >
-      <
-      div className = "sect" > < /div> <
-      div className = "txt"
-      style = {
-        {
-          fontSize: "23px"
-        }
-      } > < span data-aos = "zoom-up" > HABIT TRACKER < /span><br/ > < br / > < span data-aos = "zoom-up"
-      data-aos-delay = "600" > Loren impsun dolor verade istimus lore, < /span><br/ > < br / >
-      <
-      span data-aos = "zoom-up"
-      data-aos-delay = "1100" >
-      -Post New Tasks! < br / >
-      -Edit Existing Tasks! < br / >
-      -Schedule to Notify! < br / >
-      -Color Coded! < /span></div > < img src = {
-        Back
-      }
-      /> <
-      /div></div >
-      <
-      div className = "bx5"
-      id = "tm"
-      style = {
-        {
-          marginTop: "2122px"
-        }
-      } > < div className = "boxes" >
-      <
-      div className = "sect" > < /div> <
-      div className = "txt"
-      style = {
-        {
-          fontSize: "23px"
-        }
-      } > < span data-aos = "zoom-up" > CHALLENGE A FRIEND < /span><br/ > < br / > < span data-aos = "zoom-up"
-      data-aos-delay = "600" > Loren impsun dolor verade istimus lore. < /span><br/ > < br / >
-      <
-      span data-aos = "zoom-up"
-      data-aos-delay = "1100" >
-      -Post New Tasks! < br / >
-      -Edit Existing Tasks! < br / >
-      -Schedule to Notify! < br / >
-      -Color Coded! < /span></div > < img src = {
-        Back
-      }
-      /> <
-      /div></div >
+      -Color Coded!</p>
+                       </div>
+                       <div>
+                           <img src={Back1} />
+                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>HABIT TRACKER</span> <br/><br/>
+                           -Track your Habits! < br / >
+                          -Make New Streaks! < br / >
+                          -Beautiful Graphs! < br / >
+                          -Schedule your Day!</p>                       </div>
+                       <div>
+                           <img src={Back2} />
+                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>CHALLENGE A FRIEND</span> <br/><br/>
+                           -Compete with your Friends! < br / >
+      -Create Challenging Tasks! < br / >
+      -Who finished first? < br / >
+      </p>
+                       </div>
+                   </Carousel>
+      </div>
       <
       div className = "con"
       id = "con" > < div className = "contact" > < p style = {
@@ -230,9 +199,9 @@ class Cont extends React.Component {
       /div></div >
       <
       div className = "nav" >
-      <
+    <Link to ='/landing'>  <
       div className = "hd" >
-      HabitAble < /div>
+      HabitAble < /div> </Link>
 
 
       <
@@ -242,7 +211,7 @@ class Cont extends React.Component {
       div className = "slide-out"
       id = "navbox" >
       <
-      ul className = "sidy" >
+      ul className = "sidy" id="blockboxs">
       <
       Link to = '/tasks' > < li style = {
         {
@@ -264,6 +233,8 @@ class Cont extends React.Component {
         className="kk"
       > HABITS < /li></Link >
       <
+      Link to = '/challenge'>
+      <
       li style = {
         {
           paddingTop: "6px",
@@ -272,14 +243,15 @@ class Cont extends React.Component {
         }
       }
          className="kk"
-      > CHALLENGE < /li> <
+      > CHALLENGE < /li> </Link>
+
+       <
       /ul>
       <
-      br / > < br / > < br / > < br / > < br / > < br / > < br / >
-      <
+      br / > < br / > < br / > < br / ><br/><br/><
       Clock / >
       <
-      br / > < br / > < br / > < br / > < br / > < br / >
+      br / > < br / > < br / ><br/>
 
       <
       Link to = "/landing" > < div className = "letbox"
@@ -289,19 +261,22 @@ class Cont extends React.Component {
         }
       } > < div className = "qtxt" > HOME < /div><div className="linx"></div > < /div></Link > < br / >
       <
-      div className = "letbox" > < div className = "qtxt" > LET 'S TRACK! <
+      div className = "letbox" id="tsks"> < div className = "qtxt" > LET 'S TRACK! <
       /div><div className="linx"></div > < /div> <
       br / > < br / > < br / > < br / >
       <
       Link to = '/profile' > < div className = "letbox" > < div className = "qtxt" > PROFILE < /div><div className="linx"></div > < /div></Link > < br / > < br / > < br / > < br / >
+      <Link to = '/notifications'>
       <
-      div className = "letbox" > < div className = "qtxt" > NOTIFICATIONS < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
+      div className = "letbox" > < div className = "qtxt" > NOTIFICATIONS < /div><div className="linx"></div > < /div></Link><br/ > < br / > < br / > < br / >
       <
       div className = "letbox" onClick={this.TriggerOutlook} > < div className = "qtxt" > FEEDBACK < /div><div className="linx"></div > < /div><br/ > < br / > < br / > < br / >
       <
       ScrollTo selector = "#con" >
       <
-      div className = "letbox" > < div className = "qtxt" > CONTACT US < /div></div > < /ScrollTo>
+      div className = "letbox" > < div className = "qtxt" > CONTACT US < /div><div className="linx"></div ></div > <br/ > < br / > < br / > < br / >< /ScrollTo>
+      <
+      div className = "letbox" onClick={this.TriggerOutlook} > < div className = "qtxt" > LOGOUT < /div><div className="linx"></div > < /div>
 
       <
       /div>
@@ -311,7 +286,14 @@ class Cont extends React.Component {
       render = {
         () => < Prof / >
       }
-      /> <
+      />
+      <
+      Route exact path = "/notifications"
+      render = {
+        () => < Notis / >
+      }
+      />
+      <
       Route exact path = "/tasks"
       render = {
         () => < Tasks / >
@@ -320,6 +302,11 @@ class Cont extends React.Component {
       Route exact path = "/habits"
       render = {
         () => < Tasks2 / >
+      }
+      /> <
+      Route exact path = "/challenge"
+      render = {
+        () => < Tasks3 / >
       }
       />
 

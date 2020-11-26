@@ -35,7 +35,6 @@ class Tasks1 extends Component{
 
   var tsks = localStorage.getItem('taskdata');
   var task = JSON.parse(tsks);
-  console.log(task.tasks.length);
 
   for (var i=0; i<task.tasks.length; i++)
   {
@@ -194,7 +193,8 @@ class Tasks1 extends Component{
               scheduled: date,
               title: titl,
               description: desc,
-              color: col
+              color: col,
+              notify: true
             },
             accessToken: tkx.accessToken
           };
@@ -334,7 +334,7 @@ crossorigin="anonymous"/>
     <div className="input-group" style={{width:"750px", marginLeft: "140px", marginTop: "-100px", position: "fixed"}}>
       <div className="input-group-prepend">
       <br/><br/><br/><br/>
-        <span className="input-group-text"  style={{background: "#e38820", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
+        <span className="input-group-text"  style={{background: "#f05a0a", color: "white", borderColor: "transparent", height: "38px"}}>Enter new task: </span>
       </div>
       <input
         type="text"
@@ -342,14 +342,15 @@ crossorigin="anonymous"/>
         placeholder="What will you do today?"
         data-name="todo-input"
         onChange = {event => this.desc = event.target.value}
+        style={{border: "3px solid #f05a0a"}}
       />
       <div className="input-group-append">
-        <button className="btn btn-success" data-name="add-btn" style={{background: "#e38820", height: "38px", marginTop: "-97px"}}>
+        <button className="btn btn-success" data-name="add-btn" style={{background: "#f05a0a", height: "39px", marginTop: "-97px", border:"transparent"}}>
           Append
         </button>
       </div>
     </div>
-    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #e38820", marginTop:"70px"}}>
+    <div className="col-lg-6" style={{width: "1100px", borderRight: "3px dotted #6effb1", marginTop:"70px"}}>
       <h3 style={{fontsize: "16px", width: "270px", fontFamily: "Architects Daughter", textAlign: "center", marginLeft:"150px", position: "fixed", marginTop:"-110px"}}>
       Scheduled Tasks</h3>
       <ul className="list-group" data-name="todos-list" style={{marginTop:"-30px"}}/>

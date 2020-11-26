@@ -1,0 +1,60 @@
+.chalbody{
+top:0px;
+left:0px;
+height: 100%;
+width:100%;
+background:#001947;
+position: fixed;
+}
+
+.chalhead{
+  background: #13adeb;
+  height: 30px;
+  width: 150px;
+  color:white;
+  font-size: 18px;
+  border-radius: 5px;
+  text-shadow: 2px 1px black;
+  padding-top: 5px;
+  text-align: center;
+  box-shadow: 3px 0px 3px black;
+  border: transparent;
+
+}
+
+.chalbot{
+  margin-top: -3px;
+  background: #13adeb;
+  min-height: 480px;
+  color:white;
+  width: 550px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 3px 3px 5px black;
+  border: transparent;
+}
+
+.incon{
+  background: white;
+  min-height: 315px;
+  width: 510px;
+  border-radius: 12px;
+  position: absolute;
+  margin-top: 140px;
+  margin-left: 20px;
+  box-shadow: 3px 3px 8px black;
+
+}
+
+.tskwin{
+  height: 255px;
+  width: 478px;
+  background: #0a66a8;
+  position: absolute;
+  border-radius: 10px;
+  top: 15%;
+  left:3%;
+  box-shadow: 3px 3px 5px black;
+
+}

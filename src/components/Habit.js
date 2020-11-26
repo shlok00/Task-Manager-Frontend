@@ -237,7 +237,7 @@ crossorigin="anonymous"/>
   </div>
 
     </div>
-    <div className="input-group" style={{width:"350px", marginLeft: "20px", marginTop: "120px", position: "fixed"}}>
+    <div className="input-group" style={{maxWidth:"350px", marginLeft: "20px", marginTop: "120px", position: "fixed"}}>
           <div className="input-group-prepend">
           <br/><br/><br/><br/>
               <span className="input-group-text"  style={{background: "#60397d", color: "white", borderColor: "transparent", height: "38px", width:"125px" }}>New Habit: </span>
@@ -248,54 +248,64 @@ crossorigin="anonymous"/>
               placeholder="What will you do today?"
               data-name="hab-input"
               onChange = {event => {habitvalue = event.target.value; console.log(habitvalue);}}
+              style={{border:"3.5px solid #60397d"}}
+
             />
             <div className="input-group-append">
-              <button className="btn btn-success" data-name="add-bt" style={{background: "#60397d", height: "38px", border: "1px solid #60397d", marginTop:"-95px", marginLeft:"353px"}}>
+              <button className="btn btn-success" data-name="add-bt" style={{background: "#60397d", height: "38px", border: "1px solid #60397d", marginTop:"-96px", marginLeft:"350px"}}>
                 Add
               </button>
             </div>
           </div>
-      <div className="input-group" style={{width:"350px", marginLeft: "20px", marginTop: "180px", position: "fixed"}}>
+      <div className="input-group" style={{maxWidth:"350px", marginLeft: "20px", marginTop: "180px", position: "fixed"}}>
             <div className="input-group-prepend">
             <br/><br/><br/><br/>
               <span className="input-group-text"  style={{background: "#ba3c5d", color: "white", borderColor: "transparent", height: "38px", width:"125px" }}>Habit Streak! </span>
             </div>
             <select
               className="form-control"
-              id="habstreak">
+              id="habstreak"
+              style={{border:"3.5px solid #ba3c5d"}}
+              >
+
               </select>
             <div className="input-group-append">
-              <button className="btn btn-success" data-name="upd-btn" style={{background: "#ba3c5d", height: "38px", border: "1px solid #ba3c5d", marginTop:"-95px", marginLeft:"353px"}}>
+              <button className="btn btn-success" data-name="upd-btn" style={{background: "#ba3c5d", height: "38px", border: "1px solid #ba3c5d", marginTop:"-96px", marginLeft:"350px"}}>
                 Add
               </button>
             </div>
           </div>
-          <div className="input-group" style={{width:"350px", marginLeft: "20px", marginTop: "240px", position: "fixed"}}>
+          <div className="input-group" style={{maxWidth:"350px", marginLeft: "20px", marginTop: "240px", position: "fixed"}}>
                 <div className="input-group-prepend">
                 <br/><br/><br/><br/>
                   <span className="input-group-text"  style={{background: "#cf59ad", color: "white", borderColor: "transparent", height: "38px", }}>Delete Streak! </span>
                 </div>
                 <select
                   className="form-control"
-                  id="delhabstreak">
+                  id="delhabstreak"
+                  style={{border:"3.5px solid #cf59ad"}}
+                     >
                   </select>
                 <div className="input-group-append">
-                  <button className="btn btn-success" data-name="delh-btn" style={{background: "#cf59ad", height: "38px", border: "1px solid #cf59ad", marginTop:"-95px", marginLeft:"353px"}}>
+                  <button className="btn btn-success" data-name="delh-btn" style={{background: "#cf59ad", height: "38px", border: "1px solid #cf59ad", marginTop:"-96px", marginLeft:"350px"}}>
                     Delete
                   </button>
                 </div>
               </div>
-          <div className="input-group" style={{width:"350px", marginLeft: "20px", marginTop: "300px", position: "fixed"}}>
+          <div className="input-group" style={{maxWidth:"350px", marginLeft: "20px", marginTop: "300px", position: "fixed"}}>
                 <div className="input-group-prepend">
                 <br/><br/><br/><br/>
                   <span className="input-group-text"  style={{background: "#494ea3", color: "white", borderColor: "transparent", height: "38px", width:"125px" }}>Delete Habit: </span>
                 </div>
                 <select
                   className="form-control"
-                  id="delhab">
+                  id="delhab"
+                  style={{border:"3.5px solid #494ea3"}}
+
+                  >
                   </select>
                 <div className="input-group-append">
-                  <button className="btn btn-success" data-name="del-btn" style={{background: "#494ea3", height: "38px", border: "1px solid #494ea3", marginTop:"-95px", marginLeft:"353px"}}>
+                  <button className="btn btn-success" data-name="del-btn" style={{background: "#494ea3", height: "38px", border: "1px solid #494ea3", marginTop:"-96px", marginLeft:"350px"}}>
                     Delete
                   </button>
                 </div>
@@ -306,7 +316,7 @@ crossorigin="anonymous"/>
           <BarChart
             data={this.state.data[0].data}
             title={this.state.data[0].title}
-            color={['#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#a772ba','#bf6370','#a772ba', '#8ee3f5']}
+            color={['#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370']}
           />
         </div>
         <div className="chartblock" style={{height: "260px", width:"540px", marginLeft:"51%", marginTop:"20px",border: "1px solid #68b8cc", padding:"20px",
@@ -315,7 +325,7 @@ crossorigin="anonymous"/>
           <PieChart
             data={this.state.data[0].data}
             title={this.state.data[0].title}
-            colors={['#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#a772ba', '#8ee3f5', '#bf8d28', '#60cc86', '#d6e060', '#bf6370','#bf8d28','#a772ba', '#8ee3f5']}
+            colors={['#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370']}
             style={{marginTop: "50px"}}
           />
 
