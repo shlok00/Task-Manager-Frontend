@@ -1,27 +1,42 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import '../styles/Tasks3.css';
-import axios from 'axios';
 import Habit from './Habit.js';
+import axios from 'axios';
 import Note from '../images/note.jpg';
-import { Route, Link, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router} from 'react-router-dom';
 
+var token = localStorage.getItem('token');
+const tkx = JSON.parse(token);
 var chaltask='';
-var maintasks = '';
+var maintasks='';
+var maintasks1;
+ var tasks = [];
+ var code='';
 
 class Tasks3 extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   checkdone = (event) => {
     event.preventDefault();
-    console.log(event.target);
+
+    console.log('CONGRATULATIONS ON FINISHING YOUR CHALLENGE!!');
+  }
+
+  Setchal = (event) => {
+    event.preventDefault();
+    code = document.getElementById('code').value;
+    const d = {
+      challenge: {tasks: tasks, code: code},
+      accessToken: tkx.accessToken
+    };
+    axios.put('/challenge',d).then(response=>{console.log(response.data)}).catch(error=>{alert("ERROR!")});
   }
 
 
+
+
+
 componentDidMount()
-{
+{ code = document.getElementById('code').innerHTML;
   const mainz = document.querySelector("main");
 
 
@@ -33,30 +48,31 @@ componentDidMount()
        maintasks = ' ' + ' ➜ ' + mainz.querySelector('[data-name="tas-input"]').value + ' ' + '<br>';
        const tod = mainz.querySelector('[data-name="taskchals"]');
        tod.insertAdjacentHTML("beforeend", maintasks);
-
-       const hablis = mainz.querySelector('[data-name="tas-input"]');
+      tasks.push(mainz.querySelector('[data-name="tas-input"]').value);
+       var hablis = mainz.querySelector('[data-name="tas-input"]');
          hablis.value = "";
       }
-    else if (name === "add2-bt") {
-       var maintasks1 =['a','bb','ccc','dddd','eeeee','ffff','ggg','hh','i','jklmnao'];
-       const tod = mainz.querySelector('[data-name="taskchals1"]');
-       for(var i =0;i<=9; i++){
-         console.log(i);
-         var l = 'task'+i;
-         var r = `<button id="${l}" style="font-size:18px; color:#820719; line-height: 8.5px; background:none;border:none; font-weight: bold; height: 15px; ">&nbsp;&nbsp;➜ &nbsp;${maintasks1[i]}&nbsp;<br></button><br/>`;
-       tod.insertAdjacentHTML("beforeend", r);}
 
-       const hablis = mainz.querySelector('[data-name="tas-input1"]');
-         hablis.value = "";
-      }
+    else if (name === "add2-bt"){
+      code = mainz.querySelector('[data-name="tas-input1"]').value;
+      const d = {accessToken: tkx.accessToken
+      };
+      axios.post(`/challenge/${code}`,d).then(response=>{console.log(response.data); maintasks1 = response.data.tasks; const tod = mainz.querySelector('[data-name="taskchals1"]');
+    for(var i =0;i<maintasks1.length; i++){
+        console.log(i);
+        var l = 'task'+i;
+        var r = `<button id="${l}" style="font-size:18px; color:#820719; line-height: 8.5px; background:none;border:none; font-weight: bold; height: 15px; ">&nbsp;&nbsp;➜ &nbsp;${maintasks1[i]}&nbsp;<br></button><br/>`;
+      tod.insertAdjacentHTML("beforeend", r);}}).catch(error=>{alert("ERROR!")});
+
+    }
     else{
       console.log(e.target.id);
-      for(var i =0; i<=9; i++)
-      {  var a = 'task'+i;
-        if(e.target.id == a)
+      for(var iq =0; iq<=9; iq++)
+      {  var a = 'task'+iq;
+        if(e.target.id === a)
         {
           console.log("hey!");
-          if(e.target.style.textDecoration=="none")
+          if(e.target.style.textDecoration==="none")
           e.target.style.textDecoration="line-through";
           else {
             e.target.style.textDecoration="none";
@@ -72,7 +88,7 @@ componentDidMount()
     mainz.addEventListener("mouseover", (e) => {
       for(var i =0; i<=9; i++)
     {  var a = 'task'+i;
-      if(e.target.id == a)
+      if(e.target.id === a)
       {
         e.target.style.boxShadow="none";
       }
@@ -108,6 +124,7 @@ crossorigin="anonymous"/>
           </div>
           <input
             type="text"
+            id="inps"
             className="form-control"
             placeholder="Challenge your friends!"
             data-name="tas-input"
@@ -115,18 +132,20 @@ crossorigin="anonymous"/>
             style={{border:"3.5px solid #c7ae08"}}
           />
           <div className="input-group-append">
-            <button className="btn btn-success" data-name="add1-bt" style={{background: "#c7ae08", height: "38px", border: "1px solid #c7ae08", marginTop:"-96px", marginLeft:"350px", width:"85px", color:"black"}}>
+            <button className="btn btn-success" data-name="add1-bt" style={{background: "#c7ae08", height: "38px", border: "1px solid #c7ae08", marginTop:"-96px",
+            marginLeft:"350px", width:"85px", color:"black"}}>
               Add
             </button>
           </div>
         </div>
         <div className="incon">
-        <h6 style={{color:"black", textAlign:"left", fontFamily:"McLaren, cursive", background:"white", paddingLeft:"20px", marginTop:"20px"}}>+ Code: 2uidj2</h6>
+        <h6 style={{color:"black", textAlign:"left", fontFamily:"McLaren, cursive", background:"white", paddingLeft:"20px", marginTop:"20px"}}>+ Code:
+        <input id ="code" ></input></h6>
         <div className="tskwin">
         <h4 id = "tasklist" style={{background: "transparent", textAlign:"left", padding: "10px", fontSize:"20px", color:"black"}} data-name="taskchals"></h4>
         </div>
         <button className="btn btn-success" data-name="upd1-bt" style={{background: "#fff", height: "37px", color:"#052663",
-         border: "1px solid #fff", marginTop:"-40px", marginLeft:"140px", width:"85px", border:"4px outset #c7ae08"}}>
+         border: "1px solid #fff", marginTop:"-40px", marginLeft:"140px", width:"85px", border:"4px outset #c7ae08"}} onClick={this.Setchal}>
           Set!
         </button>
         </div>
@@ -150,7 +169,7 @@ crossorigin="anonymous"/>
           style={{border:"3.5px solid #c7ae08"}}
         />
         <div className="input-group-append">
-          <button className="btn btn-success" data-name="add2-bt" style={{background: "#c7ae08", height: "38px", color: "black", border: "1px solid #c7ae08", marginTop:"-96px", marginLeft:"350px", width:"85px"}}>
+          <button className="btn btn-success" onClick={this.Getchal} data-name="add2-bt" style={{background: "#c7ae08", height: "38px", color: "black", border: "1px solid #c7ae08", marginTop:"-96px", marginLeft:"350px", width:"85px"}}>
             Start
           </button>
         </div>
