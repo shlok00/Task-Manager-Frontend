@@ -3,6 +3,7 @@ import Clock from './Clock.js';
 import Feed from './Feedback.js';
 import '../styles/Cont.css';
 import '../styles/Write.css';
+import axios from 'axios';
 import Back from '../images/back.jpg';
 import Back1 from '../images/back1.png';
 import Back2 from '../images/back2.png';
@@ -35,12 +36,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { SocialIcon } from 'react-social-icons';
 
+var notnum = 0;
+var token = localStorage.getItem('token');
+const tkx = JSON.parse(token);
+
 
 class Cont extends React.Component {
   componentDidMount() {
     AOS.init({
       duration: 1500
     });
+    const d = {accessToken: tkx.accessToken};
+    axios.put('/user/task/notification',d).then(response=>{notnum = response.data}).catch(alert("ERROR!"));
   }
 
   TriggerOutlook = (event) =>
@@ -268,7 +275,7 @@ class Cont extends React.Component {
        <
       /ul>
     <Link to="/tasks"><span style={{fontSize:"30px", marginLeft:"70%", paddingTop:"10px", textShadow:"1px 1px 30px #f5e876"}}>🔔</span> </Link><Link to="/tasks">
-    <div className="nots">0</div></Link>  <
+    <div className="nots">{notnum}</div></Link>  <
       br / >< br / > < br / > < br / ><br/><br/><
       Clock / >
       <
