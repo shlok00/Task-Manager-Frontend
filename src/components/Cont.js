@@ -194,18 +194,18 @@ class Cont extends React.Component {
           fontSize: "20px"
         }
       } >
-      CONTACT US < /p> <p style={{color: "#b0c1d6",padding:"15px", fontSize: "17px", textAlign: "center", width: "450px", borderRight: "1px dotted #b0c1d6", float:"left",
+      CONTACT US < /p> <p style={{color: "#ebe15b",padding:"15px", fontSize: "17px", textAlign: "center", width: "450px", borderRight: "1px dotted #b0c1d6", float:"left",
       marginTop:"-10px"}}>
       Shlok Naik <br/><br/>
       <img src={Sho} style={{height:"180px", width:"180px", borderRadius:"50%", boxShadow:"3px 3px 30px #689993"}}/>
-      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#b0c1d6", color:"black"}}>FRONTEND DEVELOPER</span><br/><br/>Phone: 93278xxxxx<br/>SIESGST <br/> NAVI MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/spacejamart/?hl=en" /> &nbsp; &nbsp; &nbsp;
+      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#ebe15b", color:"black", border:"2px outset #b5a800"}}>FRONTEND DEVELOPER</span><br/><br/>Phone: 93278xxxxx<br/>SIESGST <br/> NAVI MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/spacejamart/?hl=en" /> &nbsp; &nbsp; &nbsp;
       <SocialIcon
      url="https://www.github.com/shlok00" /> <br/>
 
       < /p> <
       p style = {
         {
-          color: "#b0c1d6",
+          color: "#ebe15b",
           padding: "15px",
           fontSize: "17px",
           textAlign: "center",
@@ -213,7 +213,7 @@ class Cont extends React.Component {
         }
       } > Shabarish Ramaswamy <br/><br/>
       <img src={Shab} style={{height:"180px", width:"180px", borderRadius:"50%", boxShadow:"3px 3px 30px #689993"}}/>
-      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#b0c1d6", color:"black"}}>BACKEND DEVELOPER</span><br/><br/>Phone: 99978xxxxx<br/>SIESGST<br/>MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/shabarishramaswamy/?hl=en" /> &nbsp; &nbsp; &nbsp;
+      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#ebe15b", color:"black", border:"2px outset #b5a800"}}>BACKEND DEVELOPER</span><br/><br/>Phone: 99978xxxxx<br/>SIESGST<br/>MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/shabarishramaswamy/?hl=en" /> &nbsp; &nbsp; &nbsp;
        <SocialIcon
       url="https://www.github.com/ShabarishRamaswamy" /> <br/>
       < /p> <
