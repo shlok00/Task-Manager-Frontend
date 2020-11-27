@@ -101,8 +101,8 @@ render(){
       <h2 style={{
           padding: 20,
           fontFamily: "arial",
-          background: "#173d96",
-          color: "white",
+          background: "#11151f",
+          color: "#e8e682",
           minWidth: 850,
           textAlign: "left"
         }}
@@ -116,7 +116,7 @@ render(){
           id="photo"
           name="filename"
           accept=".png, .jpg, .jpeg"
-          style={{ textAlign: "left", marginLeft: -25 }}
+          style={{ textAlign: "left", marginLeft: -25, color:"yellow" }}
         />
 
 
@@ -126,13 +126,13 @@ render(){
           value="UPLOAD"
           style={{
             fontFamily: "arial",
-            background: "#173d96",
-            color: "white",
+            background: "#d1cd06",
+            color: "black",
             border: "none",
             marginLeft: 290,
             height: 35,
             width: 100,
-            marginTop: "-130px",
+            marginTop: "-138px",
             fontWeight: "bold",
             borderRadius: 7
           }}
@@ -145,8 +145,8 @@ render(){
           <br />
           <br/>
             <br/>
-          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
-            Username:{" "}
+          <h4 style={{background: "transparent", color: "#e8e682", fontSize:"16px",fontFamily:"McLaren", textAlign: "left", marginLeft: 15, width:"460px"}}>
+            Username:{" "}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="text"
               placeholder= "Enter new username"
@@ -156,8 +156,8 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
-            Age:{" "}
+          <h4 style={{background: "transparent", color: "#e8e682",fontSize:"16px", fontFamily:"McLaren", textAlign: "left", marginLeft: 15,width:"460px"}}>
+            Age:{" "}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="number"
               placeholder="Enter new age"
@@ -167,8 +167,8 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4  style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15}}>
-             Email:{" "}
+          <h4  style={{background: "transparent", color: "#e8e682",fontSize:"16px", fontFamily:"McLaren", textAlign: "left", marginLeft: 15,width:"460px"}}>
+             Email:{" "}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="email"
               value= {email}
@@ -177,14 +177,31 @@ render(){
             />{" "}
           </h4>
             <br/>
-          <h4 style={{background: "white", color: "#586575", fontFamily:"Arial", textAlign: "left", marginLeft: 15, marginTop:7}}>
-            Password:{" "}
+          <h4 style={{background: "transparent", color: "#e8e682",fontSize:"16px", fontFamily:"McLaren", textAlign: "left", marginLeft: 15, marginTop:7,width:"460px"}}>
+            Password:{" "}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="password"
               placeholder="********"
               style={{ height: 28 }}
               disabled
             />{" "}
+            <input
+              type="submit"
+              className="subs"
+              value="UPDATE"
+              style={{
+                fontFamily: "arial",
+                background: "#d1cd06",
+                color: "black",
+                border: "none",
+                marginLeft: 290,
+                height: 35,
+                width: 100,
+                marginTop:"90px",
+                fontWeight: "bold",
+                borderRadius: 7
+              }}
+            />
           </h4>
           <br />
           <br />
@@ -193,23 +210,7 @@ render(){
           <br />
 
 
-          <input
-            type="submit"
-            className="subs"
-            value="UPDATE"
-            style={{
-              fontFamily: "arial",
-              background: "#173d96",
-              color: "white",
-              border: "none",
-              marginLeft: 290,
-              height: 35,
-              width: 100,
-              marginTop: "-165px",
-              fontWeight: "bold",
-              borderRadius: 7
-            }}
-          />
+
         </form>
       </div>
     </div>

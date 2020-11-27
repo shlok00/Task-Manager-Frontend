@@ -312,14 +312,14 @@ crossorigin="anonymous"/>
               </div>
       </div>
       <div className="Canv">
-        <div className="chartblock" style={{height: "270px", width:"540px", marginLeft:"51%",marginTop:"-25px",border: "1px solid #68b8cc", background:"#0c1926"}}>
+        <div className="chartblock" style={{height: "270px", width:"500px", marginLeft:"51%",marginTop:"-25px",border: "1px solid #68b8cc", background:"#0c1926"}}>
           <BarChart
             data={this.state.data[0].data}
             title={this.state.data[0].title}
             color={['#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370']}
           />
         </div>
-        <div className="chartblock" style={{height: "260px", width:"540px", marginLeft:"51%", marginTop:"20px",border: "1px solid #68b8cc", padding:"20px",
+        <div className="chartblock" style={{height: "260px", width:"500px", marginLeft:"51%", marginTop:"20px",border: "1px solid #68b8cc", padding:"20px",
         background:"#0c1926"
 }}>
           <PieChart

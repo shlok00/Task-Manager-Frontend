@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 
+
 img{
   height: 420px;
   width: 960px;
@@ -32,8 +33,8 @@ img{
 }
 
 .des{
-  background: linear-gradient(to bottom, black,#030f42,black);
-  height:90%;
+  background: linear-gradient(to bottom, black,#222733,black);
+  height:100%;
   width:100%;
   position: absolute;
   top:540px;
@@ -52,8 +53,8 @@ img{
 
 .boxbck{
   margin-top:-38px;
-background: linear-gradient(to right,#000,60%,#14104a);
-height: 1950px;
+background: black;
+height: 1800px;
 width: 1300px;
 
 }
@@ -80,11 +81,11 @@ background: #000;
 }
 
 .carcont{
-  height: 560px;
-  width: 1000px;
+  height: 600px;
+  width: 1028px;
   position: absolute;
-  margin-top: 1200px;
-  margin-left: 20px;
+  margin-top: 0px;
+  margin-left: 10px;
 }
 
 .bx1{
@@ -121,11 +122,11 @@ box-shadow: 5px 5px 10px #151821;
 
 .linx{
   background: transparent;
-  border-left: 3px dotted #7483e3;
+  border-left: 3px dotted #d9cc3f;
   position: absolute;
-  height: 25px;
+  height: 15px;
   width: 100px;
-  margin-top: 0px; margin-left: 110px;
+  margin-top: 8px; margin-left: 110px;
 }
 
 .hd{
@@ -167,10 +168,10 @@ box-shadow: 5px 5px 10px #151821;
   border-radius: 5px;
 }
 .con{
-  background: linear-gradient(to left,#040a33,#1c2ea6);
-  height: 220px;
-  width: 1000px;
-  margin-top: 1700px;
+  background: linear-gradient(to bottom,#141924,90%,#333436);
+  height: 580px;
+  width: 1010px;
+  margin-top: 1200px;
   margin-left: 20px;
   position: absolute;
 }

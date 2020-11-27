@@ -1,46 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 
 .letbox{
-  border: 1px outset #7b98ed;
+  border: 1px outset #8c9da3;
   height: 50px;
   width: 220px;
   position: absolute;
   margin-left: 0px;
-  box-shadow: inset -1px -1px 10px #7b98ed;
+  box-shadow: inset -1px -1px 10px #8c9da3;
+  color: #fff;
+
 }
 
 .qtxt{
   font-family: McLaren, cursive;
   font-size: 15px;
-  color: #8fbfff;
   text-align: center;
   margin: 13px;
 }
 
+.kk{
+  color: white;
+  text-decoration: none;
+
+}
 .kk:hover{
-  background: #3d4f8f;
+  background: #d9cc3f;
   cursor: pointer;
-  color: white;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.logbuts{
-  height: 34px;
-  width: 100px;
-  border-radius: 5px;
-  background: black;
-  border: 1px outset #7b98ed;
-  box-shadow: inset -1px -1px 10px #7b98ed;
-  color: white;
-  margin-top: 5px;
-  margin-left: 60px;
-position: absolute;
-}
-
-.logbuts:hover{
-cursor:pointer;
-background: #3d4f8f;
-
-}
 
 .sidy{
 opacity: 0.0;
@@ -52,25 +42,23 @@ background: black;
 
 
 .letbox:hover{
-  background: #3d4f8f;
+  background: #d9cc3f;
   cursor: pointer;
-
+  color: black;
 }
 
-.letbox:hover .sidy{
-  opacity: 1;
-}
 
-.letbox:hover .qtxt{
-  color: white;
-}
+.letbox:hover.qtxt{
+color: black;}
+
+
 .contact{
-  height: 180px;
-  width: 960px;
+  height: 540px;
+  width: 970px;
   margin: 18px;
   border-radius: 8px;
   background: transparent;
-  box-shadow: 7px 7px 20px #000;
+  box-shadow:  7px 7px 20px #000;
 }
 
 .boxes{

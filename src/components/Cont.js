@@ -11,9 +11,8 @@ import Heal from '../images/health.gif';
 import Work from '../images/work.gif';
 import Home from '../images/but.png';
 import Bub from '../images/bub.gif';
-import Gg from '../images/gg.png';
-import Gs from '../images/gs.png';
-import Gw from '../images/gw.png';
+import Sho from '../images/sho.png';
+import Shab from '../images/shab.png';
 import ScrollTo from "react-scroll-into-view";
 import Prof from './Prof.js';
 import Notis from './Notis.js';
@@ -34,7 +33,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-
+import { SocialIcon } from 'react-social-icons';
 
 
 class Cont extends React.Component {
@@ -100,6 +99,7 @@ class Cont extends React.Component {
 
       <
       div className = "bdhome" >
+
       <
       div className = "cont"
       style = {
@@ -111,81 +111,79 @@ class Cont extends React.Component {
       <
       Router >
 
-      <
-      div className = "bx1"
-      id = "home" > < div className = "boxes" >
+      <div className="carcont">
+      <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs = {false} >
+<div style={{  width: "1020px"}}>
+ <
+        div className = "type"
+        style = {
+          {
+            marginTop: "150px",textShadow:"2px 2px 5px black"
+          }
+        } > HabitAble < br / > < /div> <
+        div className = "type1"
+        style = {
+          {
+            marginTop: "400px",textShadow:"2px 2px 5px black"
+          }
+        } > SIMPLE. EFFECTIVE. MODERN. < /div> <div className="type1" style={{marginTop: "30px", fontSize:"19px",textShadow:"2px 2px 5px black"}}>YOUR BRAND NEW BESTFRIEND!</div >
 
-
-
-      <
-      div className = "type"
-      style = {
-        {
-          marginTop: "150px"
+        <
+        img src = {
+          Home
         }
-      } > HabitAble < br / > < /div> <
-      div className = "type1"
-      style = {
-        {
-          marginTop: "400px"
+        style = {
+          {
+            width: "1020px",
+            height: "600px",
+
+          }
         }
-      } > SIMPLE. EFFECTIVE. MODERN. < /div> <div className="type1" style={{marginTop: "30px", fontSize:"19px"}}>YOUR BRAND NEW BESTFRIEND!</div >
+        /></div>
+                     <div>
+                         <img src={Back} style={{height: "600px"}}/>
+                         <p className="legend" style={{background: "transparent", fontSize:"23px", textShadow:"2px 2px 7px black", opacity:"1"}}><span style={{fontSize:"50px"}}>TASK MANAGER</span>
+                         <br/><br/>-Post New Tasks! < br / >
+    -Edit Existing Tasks! < br / >
+    -Schedule to Notify! < br / >
+    -Color Coded!</p>
+                     </div>
+                     <div>
+                         <img src={Back1} style={{height: "600px"}} />
+                         <p className="legend" style={{background: "transparent", fontSize:"23px",textShadow:"2px 2px 7px black", opacity:"1"}}><span style={{fontSize:"50px"}}>HABIT TRACKER</span> <br/><br/>
+                         -Track your Habits! < br / >
+                        -Make New Streaks! < br / >
+                        -Beautiful Graphs! < br / >
+                        -Schedule your Day!</p>                       </div>
+                     <div>
+                         <img src={Back2} style={{height: "600px", width:"1020px"}} />
+                         <p className="legend" style={{background: "transparent", fontSize:"23px",textShadow:"2px 2px 7px black", opacity:"1"}}><span style={{fontSize:"50px"}}>CHALLENGE A FRIEND</span> <br/><br/>
+                         -Compete with your Friends! < br / >
+    -Create Challenging Tasks! < br / >
+    -Who finished first? < br / >
+    </p>
+                     </div>
+                 </Carousel>
+    </div>
 
       <
-      img src = {
-        Home
-      }
-      style = {
-        {
-          width: "1040px",
-          height: "580px",
-          marginLeft: "-20px",
-          marginTop: "-40px"
-        }
-      }
-      /> <
-      /div></div >
-
-      <
-      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "50px"}}
+      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "50px", fontSize:"19px", width:"70%"}}
        >
+<span style={{fontSize:"25px"}}     >  ABOUT US </span>
       <
-      br / > < br / >< span data-aos = "zoom-out"
-      data-aos-delay = "600" >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </span> <
-        br / > < br / >
+      br / > < br / >< span data-aos = "zoom-out" style={{color:"#f2e529"}}
+      data-aos-delay = "800" >
+      HabitAble is in an initiative started by two coding buddies who aim to make task management and tracking of habits, schedules and routines not only simple, </span> <
+        br / > < br / ><br/><br/><br/>
         < span data-aos = "zoom-out"
-        data-aos-delay = "900" >  incididunt ut labore et dolore magna aliqua. </span><
-        br / > < br / >
-        < span data-aos = "zoom-out"
-        data-aos-delay = "1200" >
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt. </span>< /h2>
-        <div className="carcont">
-        <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs = {false}>
-                       <div>
-                           <img src={Back} />
-                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>TASK MANAGER</span> <br/><br/>-Post New Tasks! < br / >
-      -Edit Existing Tasks! < br / >
-      -Schedule to Notify! < br / >
-      -Color Coded!</p>
-                       </div>
-                       <div>
-                           <img src={Back1} />
-                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>HABIT TRACKER</span> <br/><br/>
-                           -Track your Habits! < br / >
-                          -Make New Streaks! < br / >
-                          -Beautiful Graphs! < br / >
-                          -Schedule your Day!</p>                       </div>
-                       <div>
-                           <img src={Back2} />
-                           <p className="legend" style={{background: "transparent", fontSize:"23px"}}><span style={{fontSize:"50px"}}>CHALLENGE A FRIEND</span> <br/><br/>
-                           -Compete with your Friends! < br / >
-      -Create Challenging Tasks! < br / >
-      -Who finished first? < br / >
-      </p>
-                       </div>
-                   </Carousel>
-      </div>
+        data-aos-delay = "1300" > but efficient, interactive and fun! </span><
+        br / > < br / ><br/><br/>
+        < span data-aos = "zoom-out" style={{color:"#f2e529"}}
+        data-aos-delay = "1900" >
+        This applications consists of three parts, Task Manager, Habit Tracker and a fun Challenge feature where you can compete with your friends and family to see who wins the productivity contest!
+        <br/><br/>By making use of this app, we want to encourage people to be more focused, productive and disciplined as it is the need of the hour for developing population experiencing lower attention span
+        and poor time management skills.</span>< /h2>
+
       <
       div className = "con"
       id = "con" > < div className = "contact" > < p style = {
@@ -196,16 +194,29 @@ class Cont extends React.Component {
           fontSize: "20px"
         }
       } >
-      CONTACT US < /p> <p style={{color: "#b0c1d6",padding:"15px", fontSize: "17px", textAlign: "left", width: "450px", borderRight: "1px dotted #b0c1d6", float:"left"}}>
-      Shlok Naik - 118 A1082 < br / > Shabarish Ramaswamy - 118 A1077 < br / > TE - CE - D < /p> <
+      CONTACT US < /p> <p style={{color: "#b0c1d6",padding:"15px", fontSize: "17px", textAlign: "center", width: "450px", borderRight: "1px dotted #b0c1d6", float:"left",
+      marginTop:"-10px"}}>
+      Shlok Naik <br/><br/>
+      <img src={Sho} style={{height:"180px", width:"180px", borderRadius:"50%", boxShadow:"3px 3px 30px #689993"}}/>
+      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#b0c1d6", color:"black"}}>FRONTEND DEVELOPER</span><br/><br/>Phone: 93278xxxxx<br/>SIESGST <br/> NAVI MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/spacejamart/?hl=en" /> &nbsp; &nbsp; &nbsp;
+      <SocialIcon
+     url="https://www.github.com/shlok00" /> <br/>
+
+      < /p> <
       p style = {
         {
           color: "#b0c1d6",
           padding: "15px",
-          fontSize: "16px",
-          textAlign: "right"
+          fontSize: "17px",
+          textAlign: "center",
+          marginTop:"-10px"
         }
-      } > SIES Graduate School of Technology, < br / > Sri Chandrasekarendra Saraswati Vidyapuram < br / > Sector - V, Nerul, Navi Mumbai, Maharashtra 400706 < /p> <
+      } > Shabarish Ramaswamy <br/><br/>
+      <img src={Shab} style={{height:"180px", width:"180px", borderRadius:"50%", boxShadow:"3px 3px 30px #689993"}}/>
+      <br/><br/> <span style={{borderRadius:"5px", padding:"3px", background:"#b0c1d6", color:"black"}}>BACKEND DEVELOPER</span><br/><br/>Phone: 99978xxxxx<br/>SIESGST<br/>MUMBAI<br/><br/><SocialIcon url="https://www.instagram.com/shabarishramaswamy/?hl=en" /> &nbsp; &nbsp; &nbsp;
+       <SocialIcon
+      url="https://www.github.com/ShabarishRamaswamy" /> <br/>
+      < /p> <
       /div></div >
       <
       div className = "nav" >
@@ -227,7 +238,7 @@ class Cont extends React.Component {
         {
           paddingTop: "6px",
           paddingBottom: "6px",
-          textDecoration:"none", color:"#fff"
+          textDecoration:"none"
         }
       }
          className="kk"
@@ -237,7 +248,6 @@ class Cont extends React.Component {
         {
           paddingTop: "6px",
           paddingBottom: "6px",
-          textDecoration:"none", color:"#fff"
         }
       }
         className="kk"
@@ -249,7 +259,7 @@ class Cont extends React.Component {
         {
           paddingTop: "6px",
           paddingBottom: "6px",
-          textDecoration:"none", color:"#fff"
+          textDecoration:"none"
         }
       }
          className="kk"
@@ -257,7 +267,8 @@ class Cont extends React.Component {
 
        <
       /ul>
-    <span style={{fontSize:"30px", marginLeft:"70%", paddingTop:"10px", textShadow:"1px 1px 30px #f5e876"}}>🔔</span> <div className="nots">0</div>  <
+    <Link to="/tasks"><span style={{fontSize:"30px", marginLeft:"70%", paddingTop:"10px", textShadow:"1px 1px 30px #f5e876"}}>🔔</span> </Link><Link to="/tasks">
+    <div className="nots">0</div></Link>  <
       br / >< br / > < br / > < br / ><br/><br/><
       Clock / >
       <

@@ -3,12 +3,12 @@ top:0px;
 left:0px;
 height: 100%;
 width:100%;
-background:#001947;
+background:#394959;
 position: fixed;
 }
 
 .chalhead{
-  background: #13adeb;
+  background: #10171f;
   height: 30px;
   width: 150px;
   color:white;
@@ -24,7 +24,7 @@ position: fixed;
 
 .chalbot{
   margin-top: -3px;
-  background: #13adeb;
+  background: #10171f;
   min-height: 480px;
   color:white;
   width: 550px;
@@ -50,7 +50,7 @@ position: fixed;
 .tskwin{
   height: 255px;
   width: 478px;
-  background: #0a66a8;
+  background: #f7e360;
   position: absolute;
   border-radius: 10px;
   top: 15%;

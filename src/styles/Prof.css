@@ -1,5 +1,6 @@
 .bodypr{
-  background: #03214d;  align-items: center;
+  background: black;
+   align-items: center;
 position: fixed;
 height: 100%;
 width: 82.3%;
@@ -8,15 +9,16 @@ margin-top: 0px;
 
  }
   .containerprof{
-    background: #c5c5d6;
+    background: #4e535e;
     height: 500px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    border: 1px outset #11151f;
   }
   .avbox{
-    background: white;
+    background: #11151f;
     border-radius: 10px;
     margin: 7px;
     height: 80%;

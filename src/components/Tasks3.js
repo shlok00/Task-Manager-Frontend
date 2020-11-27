@@ -14,6 +14,11 @@ class Tasks3 extends React.Component {
     super(props);
   }
 
+  checkdone = (event) => {
+    event.preventDefault();
+    console.log(event.target);
+  }
+
 
 componentDidMount()
 {
@@ -37,15 +42,42 @@ componentDidMount()
        const tod = mainz.querySelector('[data-name="taskchals1"]');
        for(var i =0;i<=9; i++){
          console.log(i);
-         var r = ' ' + ' ➜ ' + maintasks1[i] + ' ' + '<br>';
+         var l = 'task'+i;
+         var r = `<button id="${l}" style="font-size:18px; color:#820719; line-height: 8.5px; background:none;border:none; font-weight: bold; height: 15px; ">&nbsp;&nbsp;➜ &nbsp;${maintasks1[i]}&nbsp;<br></button><br/>`;
        tod.insertAdjacentHTML("beforeend", r);}
 
        const hablis = mainz.querySelector('[data-name="tas-input1"]');
          hablis.value = "";
       }
+    else{
+      console.log(e.target.id);
+      for(var i =0; i<=9; i++)
+      {  var a = 'task'+i;
+        if(e.target.id == a)
+        {
+          console.log("hey!");
+          if(e.target.style.textDecoration=="none")
+          e.target.style.textDecoration="line-through";
+          else {
+            e.target.style.textDecoration="none";
 
+          }
+        }
+      }
     }
-    });}
+    }
+    });
+
+
+    mainz.addEventListener("mouseover", (e) => {
+      for(var i =0; i<=9; i++)
+    {  var a = 'task'+i;
+      if(e.target.id == a)
+      {
+        e.target.style.boxShadow="none";
+      }
+    }});
+  }
 
 
 render(){
@@ -72,7 +104,7 @@ crossorigin="anonymous"/>
   <div className="input-group" style={{maxWidth:"350px", marginLeft: "60px", marginTop: "60px", position: "fixed"}}>
         <div className="input-group-prepend">
         <br/><br/><br/><br/>
-            <span className="input-group-text"  style={{background: "#0b5aa3", color: "white", borderColor: "transparent", height: "38px", width:"95px" }}>Add Task: </span>
+            <span className="input-group-text"  style={{background: "#c7ae08", color: "black", borderColor: "transparent", height: "38px", width:"95px" }}>Add Task: </span>
           </div>
           <input
             type="text"
@@ -80,10 +112,10 @@ crossorigin="anonymous"/>
             placeholder="Challenge your friends!"
             data-name="tas-input"
             onChange = {event => {chaltask = event.target.value; console.log(chaltask);}}
-            style={{border:"3.5px solid #0b5aa3"}}
+            style={{border:"3.5px solid #c7ae08"}}
           />
           <div className="input-group-append">
-            <button className="btn btn-success" data-name="add1-bt" style={{background: "#0b5aa3", height: "38px", border: "1px solid #0b5aa3", marginTop:"-96px", marginLeft:"350px", width:"85px"}}>
+            <button className="btn btn-success" data-name="add1-bt" style={{background: "#c7ae08", height: "38px", border: "1px solid #c7ae08", marginTop:"-96px", marginLeft:"350px", width:"85px", color:"black"}}>
               Add
             </button>
           </div>
@@ -91,10 +123,10 @@ crossorigin="anonymous"/>
         <div className="incon">
         <h6 style={{color:"black", textAlign:"left", fontFamily:"McLaren, cursive", background:"white", paddingLeft:"20px", marginTop:"20px"}}>+ Code: 2uidj2</h6>
         <div className="tskwin">
-        <h4 id = "tasklist" style={{background: "transparent", textAlign:"left", padding: "10px", fontSize:"20px"}} data-name="taskchals"></h4>
+        <h4 id = "tasklist" style={{background: "transparent", textAlign:"left", padding: "10px", fontSize:"20px", color:"black"}} data-name="taskchals"></h4>
         </div>
         <button className="btn btn-success" data-name="upd1-bt" style={{background: "#fff", height: "37px", color:"#052663",
-         border: "1px solid #fff", marginTop:"-40px", marginLeft:"140px", width:"85px", border:"2px outset #13adeb"}}>
+         border: "1px solid #fff", marginTop:"-40px", marginLeft:"140px", width:"85px", border:"4px outset #c7ae08"}}>
           Set!
         </button>
         </div>
@@ -107,7 +139,7 @@ crossorigin="anonymous"/>
     borderTopRightRadius: "0px" }}> <div className="input-group" style={{maxWidth:"350px", marginLeft: "60px", marginTop: "60px", position: "fixed"}}>
       <div className="input-group-prepend">
       <br/><br/><br/><br/>
-          <span className="input-group-text"  style={{background: "#0b5aa3", color: "white", borderColor: "transparent", height: "38px", width:"95px" }}>Get Tasks: </span>
+          <span className="input-group-text"  style={{background: "#c7ae08", color: "black", borderColor: "transparent", height: "38px", width:"95px" }}>Get Tasks: </span>
         </div>
         <input
           type="text"
@@ -115,10 +147,10 @@ crossorigin="anonymous"/>
           placeholder="Challenge Accepted!"
           data-name="tas-input1"
           onChange = {event => {chaltask = event.target.value;}}
-          style={{border:"3.5px solid #0b5aa3"}}
+          style={{border:"3.5px solid #c7ae08"}}
         />
         <div className="input-group-append">
-          <button className="btn btn-success" data-name="add2-bt" style={{background: "#0b5aa3", height: "38px", border: "1px solid #0b5aa3", marginTop:"-96px", marginLeft:"350px", width:"85px"}}>
+          <button className="btn btn-success" data-name="add2-bt" style={{background: "#c7ae08", height: "38px", color: "black", border: "1px solid #c7ae08", marginTop:"-96px", marginLeft:"350px", width:"85px"}}>
             Start
           </button>
         </div>

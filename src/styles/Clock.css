@@ -3,8 +3,9 @@
 .boxed{
   height:50px;
   width: 170px;
-  color: #94bdff;
-  border: 10px outset #6279bd;
+  color: #d9cc3f;
+  text-shadow: 3px 3px 20px #d9cc3f;
+  border: 10px outset #8c9da3;
   border-radius: 10px;
   position: absolute;
   font-family: McLaren, cursive;
