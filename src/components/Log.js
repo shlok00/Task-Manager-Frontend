@@ -31,7 +31,7 @@ class Log extends Component
     axios.post(`/user/confirm/${this.hash}`,this.token ).then(response=>{
        console.log(response.status);
        alert("Email verification successful!");
-  }).catch(error=>{console.log(error.response.data); alert("Unsuccessful! Try again!")});
+  }).catch(error=>{ alert("Unsuccessful! Try again!")});
 
   }
 

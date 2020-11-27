@@ -47,7 +47,7 @@ class Cont extends React.Component {
       duration: 1500
     });
     const d = {accessToken: tkx.accessToken};
-    axios.put('/user/task/notification',d).then(response=>{notnum = response.data}).catch(alert("ERROR!"));
+    axios.put('/user/task/notification',d).then(response=>{notnum = response.data}).catch(console.log(''));
   }
 
   TriggerOutlook = (event) =>

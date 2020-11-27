@@ -31,7 +31,7 @@ class Tasks1 extends Component{
   const main = document.querySelector("main");
   var a = 1;
   axios.post('/tasks', tkx).then(response=>{ localStorage.setItem('taskdata',JSON.stringify(response.data));}
-  ).catch(error=>{alert("some alert"); console.log(error.status); console.log(tkx)});
+).catch(error=>{console.log(error.status); console.log(tkx)});
 
   var tsks = localStorage.getItem('taskdata');
   var task = JSON.parse(tsks);
