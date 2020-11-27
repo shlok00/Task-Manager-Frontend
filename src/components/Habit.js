@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js';
 import '../styles/Habit.css';
+import axios from 'axios';
 
-
+var token = localStorage.getItem('token');
+const tkx = JSON.parse(token);
 Chart.defaults.global.defaultFontFamily = "Roboto, sans-serif";
 Chart.defaults.global.defaultFontColor = 'white';
 Chart.defaults.scale.ticks.beginAtZero = true;
-
+var color=['#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370','#a772ba', '#099ae3', '#ed79d8', '#60cc86','#cf7336', '#d6e060', '#bf6370'];
+var icount = 1;
 var habitvalue='';
 
 
@@ -111,7 +114,7 @@ class Habit extends React.Component {
     super(props);
 
     this.state = {
-      data: [{title:'habit', data: [{label:'', value:0}]}]
+      data: [{title:'habit', data: [{label:'', value:0, id:'', color:''}]}]
     };
   }
 
@@ -130,7 +133,22 @@ class Habit extends React.Component {
     var dayLabel = document.getElementsByClassName("day-label")[0].innerHTML = day;
 
     var weekdayLabel = document.getElementsByClassName("weekday-label")[0].innerHTML = dayNames[date.getDay(0)];
+    const ce = {accessToken: tkx.accessToken};
 
+    axios.post('/habits',ce).then(response=>{console.log(response.data);
+      var data = response.data;
+      var x = this.state.data[0].data;
+      for(var i =0; i<data.length; i++)
+      {
+        x.push({ label: data[i].title,
+               value: data[i].streak, id: data[i]._id, color: data[i].color});
+         this.setState({
+     data: [{title:'habit', data:x}]});
+     document.getElementById('habstreak').append(new Option(`${data[i].title}`, `${data[i].title}`));
+     document.getElementById('delhabstreak').append(new Option(`${data[i].title}`, `${data[i].title}`));
+     document.getElementById('delhab').append(new Option(`${data[i].title}`, `${data[i].title}`));
+      }
+}).catch(error=>{console.log(error.data)});
 
   mai.addEventListener("click", (e) => {
 
@@ -142,45 +160,87 @@ class Habit extends React.Component {
       document.getElementById('delhabstreak').append(new Option(`${habitvalue}`, `${habitvalue}`));
       document.getElementById('delhab').append(new Option(`${habitvalue}`, `${habitvalue}`));
       var x = this.state.data[0].data;
+      var id ='';
       console.log(x);
-      x.push(    { label: habitvalue,
-            value: 0});
-      this.setState({
-  data: [{title:'habit', data:x }]
-});
+      const datahabit = {
+         habit: {
+           title: habitvalue,
+                   description: '',
+                   completedToday: false,
+                   streak: 0,
+                   color: color[icount]
+      },
+       accessToken: tkx.accessToken
+      };
+            axios.post(`/habit`,datahabit).then(response=>{ console.log(response.data); id = response.data._id; console.log(id);   x.push({ label: habitvalue,
+                    value: 0, id: id, color: color[icount]});
+              this.setState({
+          data: [{title:'habit', data:x}]
+        }); alert("success!");}).catch(e=>{alert("err!");});
 
+      console.log(this.state.data[0].data);
       const hablis = mai.querySelector('[data-name="hab-input"]');
         hablis.value = "";
+        icount++;
       }
 
       else if(name === "upd-btn")
       {
          var tag = document.getElementById('habstreak').value;
          console.log(tag);
+         var numt =0;
          var ds = this.state.data[0].data;
+         var id ='';
+         var col = '';
          for( var i =0; i<ds.length; i++)
          {
            if(ds[i].label == tag)
-            {ds[i].value = ds[i].value + 1;}
+            {ds[i].value = ds[i].value + 1; numt = ds[i].value; id = ds[i].id; col = ds[i].color; console.log(id);}
        }
-       this.setState({
-   data: [{title:'habit', data: ds}]
- });
-      }
 
+             const datahabit = {
+                habit: {
+                          title: tag,
+                          description: '',
+                          completedToday: true,
+                          streak: numt,
+                          color: col
+             },
+              accessToken: tkx.accessToken
+             };
+                   axios.patch(`/habit/${id}`,datahabit).then(response=>{ console.log(response.data);       this.setState({
+                      data: [{title:'habit', data: ds}]
+                    });
+alert("success!");}).catch(e=>{alert("err!");});
+
+}
       else if(name === "delh-btn")
       {
          var tag = document.getElementById('delhabstreak').value;
          console.log(tag);
          var ds = this.state.data[0].data;
+         var numt=0;
+         var id ='';
+         var col = '';
          for( var i =0; i<ds.length; i++)
          {
            if(ds[i].label == tag)
-            {ds[i].value = ds[i].value - 1;}
+            {ds[i].value = ds[i].value - 1;  numt = ds[i].value; id = ds[i].id; col = ds[i].color; console.log(id);}
        }
-       this.setState({
-   data: [{title:'habit', data: ds}]
- });
+       const datahabit = {
+          habit: {
+                    title: tag,
+                    description: '',
+                    completedToday: false,
+                    streak: numt,
+                    color: col
+       },
+        accessToken: tkx.accessToken
+       };
+             axios.patch(`/habit/${id}`,datahabit).then(response=>{ console.log(response.data);       this.setState({
+                data: [{title:'habit', data: ds}]
+              });
+ alert("success!");}).catch(e=>{alert("err!");});
       }
 
       else if(name === "del-btn")
@@ -188,10 +248,14 @@ class Habit extends React.Component {
          var tag = document.getElementById('delhab').value;
          console.log(tag);
          var ds = this.state.data[0].data;
+         var id='';
          for( var i =0; i<ds.length; i++)
          {
            if(ds[i].label == tag)
             { console.log(ds[i])
+              const ce = {accessToken: tkx.accessToken};
+              id = ds[i].id;
+              axios.patch(`/habit/delete/${id}`,ce).then(response=>{alert("success");}).catch(error=>{alert("ERROR!");});
               ds.splice(i, 1);
               var b = document.getElementById("habstreak");
               var c= b.selectedIndex;
