@@ -102,7 +102,7 @@ class Log extends Component
       <div className="content-holder">
         <div className="glow"><h3>HabitAble</h3><br/></div>
       <h2>Hello!</h2>
-        <p style={{color: "white"}}>JOIN US!</p>
+        <p style={{color: "#fce232"}}>JOIN US!</p>
         <div className="scale">
           <div className="mugContainer">
             <div className="mug">
@@ -115,7 +115,7 @@ class Log extends Component
     </div>
     <div className="box-2">
       <div className="login-form-container">
-        <h1 style={{ fontSize: "150%", color: "#000", marginTop: "-55px", marginLeft:"80px", color:"white"}}>LOGIN FORM</h1>
+        <h1 style={{ fontSize: "150%", color: "#000", marginTop: "-55px", marginLeft:"80px", color:"#fce232"}}>LOGIN FORM</h1>
         <br/><br />
         <br />
         <form>
@@ -132,7 +132,7 @@ class Log extends Component
       </div>
       <div className="signup-form-container">
       <br/><br/>
-        <h1 style={{ fontSize: "150%" ,marginTop: "-85px", marginLeft: "-250px", color:"white"}}>SIGN UP FORM</h1>
+        <h1 style={{ fontSize: "150%" ,marginTop: "-85px", marginLeft: "-250px", color:"#fce232"}}>SIGN UP FORM</h1>
         <br />
         <br />
         <br/> <br/>
@@ -151,8 +151,8 @@ class Log extends Component
         <input className="signup-button" type="submit" style={{marginTop:"-20px"}} value ="SIGN UP!"  />
         </form>
         <br/><br/><br/><br/>
-        <div style={{background: "#1b1978", height: "15px", width: "600px", color:"white", borderRadius: "5px", position:"absolute",
-         marginTop:"-30px", marginLeft: "-290px", padding:"15px", border:"3px outset #34327d"}}>
+        <div style={{background: "linear-gradient(to bottom,#555f69,#25282e)", height: "15px", width: "600px", color:"#ffe84a", borderRadius: "5px", position:"absolute",
+         marginTop:"-30px", marginLeft: "-290px", padding:"15px", border:"3px outset #e8db82"}}>
          <form onSubmit={this.handleHash}>
         <label>Enter the hash-code recieved in email: </label>
         <input type="text" onChange={event => this.hash = event.target.value} />

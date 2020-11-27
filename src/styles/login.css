@@ -6,7 +6,7 @@
 .bd{
     font-family: Arial, Helvetica, sans-serif;
     position:absolute;
-    background: #0a0030;
+    background: #000;
      background-repeat: no-repeat; background-attachment: fixed;
     height:648px;
     width:1280px;
@@ -19,8 +19,7 @@
 {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    background-color: red;
-    background: linear-gradient(to bottom, #000000cc,70%,#282a9ccc,#000000cc);
+    background: linear-gradient(to bottom, #000000cc,70%,#555f69,#000000cc);
     width: 200px;
     height: 400px;
     margin-top: 50px;
@@ -65,7 +64,7 @@
 
 
 .box-2{
-    background: linear-gradient(to bottom, #0000005c,#546dd65c);
+    background: linear-gradient(to bottom, #000000de,#555f69de);
     margin: 5px;
     border-radius: 0px;
     width: 800px;
@@ -107,7 +106,7 @@
 
 .login-button{
     box-sizing: border-box;
-    color: white;
+    color: black;
     font-size: 17px;
     padding: 13px;
     border-radius: 22px;
@@ -116,7 +115,7 @@
     outline: none;
     font-weight: bold;
 
-    background: linear-gradient(to bottom,#5e6ed6, 80%,#0b1a80);
+    background: linear-gradient(to bottom,#ffdd00, 80%,#786906);
 }
 
 .continue{
@@ -167,7 +166,7 @@
 
 .signup-button{
     box-sizing: border-box;
-    color: white;
+    color: black;
     font-size: 17px;
     padding: 13px;
     border-radius: 22px;
@@ -175,7 +174,7 @@
     width: 250px;
     outline: none;
     font-weight: bold;
-    background: linear-gradient(to bottom,#5e6ed6,80%,#0b1a80);
+    background: linear-gradient(to bottom,#ffdd00,80%,#786906);
 }
 
 .signup-button:hover{

@@ -25,7 +25,7 @@
 :root {
     --color-chevron: #dd5fbe;
     --color-mug: white;
-    --color-coffee: linear-gradient(to bottom, #fff,#227abd,#161b66, #061729);
+    --color-coffee: linear-gradient(to bottom, #fff,#e6d87e,#d1b91f, #061729);
     --color-round: #1a1a1a;
 }
 
@@ -48,10 +48,10 @@ h3{
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #bdddff, 0 0 20px #2850ad, 0 0 30px #5d6ac2, 0 0 40px #5d6ac2, 0 0 50px #8ec1f5, 0 0 60px #8ec1f5, 0 0 70px #0052c7;
+    text-shadow: 0 0 10px #bdddff, 0 0 20px #ffdd00, 0 0 30px #d1b91f, 0 0 40px #d1b91f, 0 0 50px #e6d87e, 0 0 60px #e6d87e, 0 0 70px #786906;
   }
   to {
-    text-shadow: 0 0 20px #bdddff, 0 0 30px #410896, 0 0 40px #094a6b, 0 0 50px #161b66, 0 0 60px #410896, 0 0 70px #01101f, 0 0 80px #fff;
+    text-shadow: 0 0 20px #bdddff, 0 0 30px #786906, 0 0 40px #d1b91f, 0 0 50px #ffdd00, 0 0 60px #786906, 0 0 70px #01101f, 0 0 80px #fff;
   }
 }
 
