@@ -8,6 +8,7 @@ import Log from './components/Log';
 import Cont from './components/Cont';
 import axios from 'axios';
 
+process.env.CI = false;
 axios.defaults.baseURL = 'http://habitable-productivityapp.herokuapp.com';
 
 

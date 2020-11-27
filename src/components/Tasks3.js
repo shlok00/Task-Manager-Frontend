@@ -18,7 +18,7 @@ class Tasks3 extends React.Component {
   checkdone = (event) => {
     event.preventDefault();
 
-    console.log('CONGRATULATIONS ON FINISHING YOUR CHALLENGE!!');
+    alert('CONGRATULATIONS ON FINISHING YOUR CHALLENGE!!');
   }
 
   Setchal = (event) => {
@@ -179,7 +179,7 @@ crossorigin="anonymous"/>
 
         </div>
         <button className="btn btn-success" data-name="upd1-bt" style={{background: "#07a651", height: "37px", color:"#fff",
-         border: "1px solid #fff", marginTop:"-330px", marginLeft:"130px", width:"85px", border:"3px outset ##07a651"}}>
+         border: "1px solid #fff", marginTop:"-330px", marginLeft:"130px", width:"85px", border:"3px outset ##07a651"}} onClick={this.checkdone}>
           Done!
         </button>
   </div>
