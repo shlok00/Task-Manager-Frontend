@@ -176,17 +176,18 @@ class Cont extends React.Component {
     </div>
 
       <
-      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute", marginTop: "700px", marginLeft: "50px", fontSize:"19px", width:"70%"}}
+      div className = "des" > < /div><h2 style={{color: "white", textAlign:"center", background: "transparent", position: "absolute",
+      marginTop: "700px", marginLeft: "50px", fontSize:"19px", width:"70%", fontFamily:"Architects Daughter, cursive"}}
        >
 <span style={{fontSize:"25px"}}     >  ABOUT US </span>
       <
       br / > < br / >< span data-aos = "zoom-out" style={{color:"#f2e529"}}
       data-aos-delay = "800" >
       HabitAble is in an initiative started by two coding buddies who aim to make task management and tracking of habits, schedules and routines not only simple, </span> <
-        br / > < br / ><br/><br/><br/>
+        br / > < br / ><br/>
         < span data-aos = "zoom-out"
         data-aos-delay = "1300" > but efficient, interactive and fun! </span><
-        br / > < br / ><br/><br/>
+        br / ><br/>
         < span data-aos = "zoom-out" style={{color:"#f2e529"}}
         data-aos-delay = "1900" >
         This applications consists of three parts, Task Manager, Habit Tracker and a fun Challenge feature where you can compete with your friends and family to see who wins the productivity contest!
