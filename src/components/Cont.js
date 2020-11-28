@@ -63,6 +63,8 @@ class Cont extends React.Component {
         Logout = (event) =>
                    { event.preventDefault();
                      window.history.go(-1);
+                     localStorage.setItem('email', '');
+                     localStorage.setItem('token','');
                    }
 
 
