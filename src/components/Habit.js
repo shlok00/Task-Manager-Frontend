@@ -176,7 +176,7 @@ class Habit extends React.Component {
                     value: 0, id: id, color: color[icount]});
               this.setState({
           data: [{title:'habit', data:x}]
-        }); alert("success!");}).catch(e=>{alert("err!");});
+        }); }).catch(e=>{alert("err!");});
 
       console.log(this.state.data[0].data);
       const hablis = mai.querySelector('[data-name="hab-input"]');
@@ -211,7 +211,7 @@ class Habit extends React.Component {
                    axios.patch(`/habit/${id}`,datahabit).then(response=>{ console.log(response.data);       this.setState({
                       data: [{title:'habit', data: ds}]
                     });
-alert("success!");}).catch(e=>{alert("err!");});
+}).catch(e=>{alert("err!");});
 
 }
       else if(name === "delh-btn")
@@ -240,7 +240,7 @@ alert("success!");}).catch(e=>{alert("err!");});
              axios.patch(`/habit/${id}`,datahabit).then(response=>{ console.log(response.data);       this.setState({
                 data: [{title:'habit', data: ds}]
               });
- alert("success!");}).catch(e=>{alert("err!");});
+ }).catch(e=>{alert("err!");});
       }
 
       else if(name === "del-btn")
@@ -255,7 +255,7 @@ alert("success!");}).catch(e=>{alert("err!");});
             { console.log(ds[i])
               const ce = {accessToken: tkx.accessToken};
               id = ds[i].id;
-              axios.patch(`/habit/delete/${id}`,ce).then(response=>{alert("success");}).catch(error=>{alert("ERROR!");});
+              axios.patch(`/habit/delete/${id}`,ce).then(response=>{console.log('');}).catch(error=>{alert("ERROR!");});
               ds.splice(i, 1);
               var b = document.getElementById("habstreak");
               var c= b.selectedIndex;
