@@ -63,8 +63,6 @@ class Cont extends React.Component {
         Logout = (event) =>
                    { event.preventDefault();
                      window.history.go(-1);
-                     localStorage.setItem('email', '');
-                     localStorage.setItem('token','');
                    }
 
 
@@ -190,7 +188,6 @@ class Cont extends React.Component {
         br / ><br/>
         < span data-aos = "zoom-out" style={{color:"#f2e529"}}
         data-aos-delay = "1900" >
-        This applications consists of three parts, Task Manager, Habit Tracker and a fun Challenge feature where you can compete with your friends and family to see who wins the productivity contest!
         <br/><br/>By making use of this app, we want to encourage people to be more focused, productive and disciplined as it is the need of the hour for developing population experiencing lower attention span
         and poor time management skills.</span>< /h2>
 

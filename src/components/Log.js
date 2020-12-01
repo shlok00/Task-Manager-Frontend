@@ -85,7 +85,6 @@ class Log extends Component
 
   }
 
-
   render(){
     const {email} = this.state;
     const {password} = this.state;

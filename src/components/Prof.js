@@ -92,7 +92,7 @@ render(){
   const {file} = this.state;
 
   var email = localStorage.getItem('email');
-  var email =  JSON.parse(email);
+  email =  JSON.parse(email);
 
 
   return(
